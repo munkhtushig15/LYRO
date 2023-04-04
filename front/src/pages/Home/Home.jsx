@@ -1,11 +1,11 @@
 import "./Home.css";
+import Header from "../../comps/Header";
 
 const Home = () => {
   return (
     <div className="homeContainer">
-      <header></header>
+      <Header />
       <main></main>
-      <footer></footer>
     </div>
   );
 };
