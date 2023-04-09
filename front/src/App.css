@@ -13,7 +13,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  gap: 20px;
 }
 .headerTop {
   width: 80%;
@@ -30,6 +29,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 30px 0;
 }
 #pageLogo {
   width: 60px;
@@ -60,6 +60,12 @@
 .searchLine {
   display: flex;
   height: 3em;
+}
+.searchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 .searchLine input {
   width: 15em;
@@ -110,7 +116,7 @@
 }
 .cateContainer {
   width: 80vw;
-  padding: 0 20vw;
+  padding: 0 10vw;
   display: flex;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -130,3 +136,5 @@
   color: #fff;
   cursor: pointer;
 }
+
+

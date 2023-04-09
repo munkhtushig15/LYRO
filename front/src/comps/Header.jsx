@@ -16,18 +16,16 @@ const Header = () => {
       <div className="headerLogoContainer">
         <div className="topLogoBox">
           <div className="topLogo">
-            <img
-              id="pageLogo"
-              src={require("../images/logo.png")}
-              alt="@-@"
-            />
+            <img id="pageLogo" src={require("../images/logo.png")} alt="@-@" />
             <span id="pageLogoText">LYRO</span>
           </div>
           <span className="bottomLogo">Pinecone Demo Day</span>
         </div>
         <div className="searchLine">
           <input type="text" placeholder="Search ..." />
-          <button className="searchButton">Search</button>
+          <button className="searchButton">
+            <i class="gg-search searchButton"></i>
+          </button>
         </div>
       </div>
       <div className="cateContainer">
