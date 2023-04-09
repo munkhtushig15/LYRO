@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.headerContainer {
+  padding: 2em 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  background-image: url("./images/headerPic.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.headerTop {
+  width: 80%;
+  display: flex;
+  justify-content: end;
+  gap: 30px;
+}
+.headerTop span {
+  color: #fff;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.headerLogoContainer {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+#pageLogo {
+  width: 60px;
+}
+#pageLogoText {
+  height: 60px;
+  color: #fff;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  font-family: "Roboto Condensed", sans-serif;
+  letter-spacing: 8px;
+}
+.topLogoBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.topLogo {
+  display: flex;
+}
+.bottomLogo {
+  color: #fff;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.searchLine {
+  display: flex;
+  height: 3em;
+}
+.searchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.searchLine input {
+  width: 15em;
+  padding: 10px 15px;
+  border-radius: 8px 0 0 8px;
+  border: 0;
+  outline: none;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: #fff;
+}
+::placeholder {
+  color: #fff;
+}
+.searchLine button {
+  padding: 10px 15px;
+  border-radius: 0 8px 8px 0;
+  border: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: #fff;
+  transition: 0.2s;
+}
+.searchLine button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.356);
+}
+.num {
+  width: 20px;
+  color: #fff;
+}
+.gg-arrow-right-r {
+  color: #fff;
+}
+.arrows {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.cateContainer {
+  width: 80vw;
+  padding: 0 10vw;
+  display: flex;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  background-color: #fff;
+}
+.cateType {
+  align-items: center;
+  padding: 5px;
+  background-color: #fff;
+  font-family: "Roboto Condensed", sans-serif;
+  display: flex;
+  gap: 5px;
+  transition: 0.3s;
+}
+.cateType:hover {
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+}
+
+
