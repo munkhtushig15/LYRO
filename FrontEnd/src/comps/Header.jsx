@@ -1,5 +1,5 @@
 import "../App.css";
-
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="headerContainer">
@@ -8,19 +8,41 @@ const Header = () => {
           <i class="gg-arrow-right-r"></i>
           <span>Sign Up</span>
         </div>
-        <div className="arrows">
-          <i class="gg-arrow-right-r"></i>
-          <span>Login</span>
-        </div>
+        <Link
+          to="/Login"
+          style={{
+            textDecoration: "none",
+            color: "white",
+            fontFamily: "Roboto Condensed, sans-serif",
+          }}
+        >
+          <div className="arrows">
+            <i class="gg-arrow-right-r"></i>
+            Login
+          </div>
+        </Link>
       </div>
       <div className="headerLogoContainer">
-        <div className="topLogoBox">
-          <div className="topLogo">
-            <img id="pageLogo" src={require("../images/logo.png")} alt="@-@" />
-            <span id="pageLogoText">LYRO</span>
+        <Link
+          to="/"
+          style={{
+            textDecoration: "none",
+            color: "white",
+            fontFamily: "Roboto Condensed, sans-serif",
+          }}
+        >
+          <div className="topLogoBox">
+            <div className="topLogo">
+              <img
+                id="pageLogo"
+                src={require("../images/logo.png")}
+                alt="@-@"
+              />
+              <span id="pageLogoText">LYRO</span>
+            </div>
+            <span className="bottomLogo">Pinecone Demo Day</span>
           </div>
-          <span className="bottomLogo">Pinecone Demo Day</span>
-        </div>
+        </Link>
         <div className="searchLine">
           <input type="text" placeholder="Search ..." />
           <button className="searchButton">
