@@ -24,6 +24,7 @@ const Blogs = () => {
           return (
             <div key={i}>
               {el.title}
+              {el.secondCategory}
               <img src={el.image} alt="goy" />
             </div>
           );

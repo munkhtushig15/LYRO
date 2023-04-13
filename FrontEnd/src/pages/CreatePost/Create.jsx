@@ -1,6 +1,8 @@
 import {instance } from "../../App"
 import { TextField } from "@mui/material"
 import { useRef } from "react"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const CreatePost = () => {
      const titleRef = useRef()
      const imageRef = useRef()
@@ -27,10 +29,12 @@ user_id:
 JSON.parse(localStorage.getItem("id"))
 
 })
+toast.success("Created")
 console.log(res)
 }
 return (
     <div>
+        <ToastContainer/>
         <TextField inputRef={titleRef} label="Title"></TextField>
         <TextField inputRef={imageRef} label="Image"></TextField>
         <TextField inputRef={descRef} label="Description"></TextField>
