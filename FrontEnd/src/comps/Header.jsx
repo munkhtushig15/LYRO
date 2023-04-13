@@ -7,14 +7,14 @@ const Header = () => {
         <div className="arrows">
           <i class="gg-arrow-right-r"></i>
           <Link
-          to="/SignUp"
-          style={{
-            textDecoration: "none",
-            color: "white",
-            fontFamily: "Roboto Condensed, sans-serif",
-          }}
-        >
-          <span>Sign Up</span>
+            to="/SignUp"
+            style={{
+              textDecoration: "none",
+              color: "white",
+              fontFamily: "Roboto Condensed, sans-serif",
+            }}
+          >
+            <span>Sign Up</span>
           </Link>
         </div>
         <Link

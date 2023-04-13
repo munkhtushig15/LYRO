@@ -12,6 +12,7 @@ const Login = () => {
     try {
        const res = await instance.post(`/users/login`, {
         email: emailRef.current.value,
+
         password: passwordRef.current.value,
       });
       window.localStorage.setItem("id" , JSON.stringify(res.data.data.id));
