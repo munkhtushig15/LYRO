@@ -1,5 +1,7 @@
 import { instance } from "../App";
 import { useEffect, useState } from "react";
+import "../App.css";
+
 const Blogs = () => {
   const [data, setData] = useState([]);
   const getBlogs = async () => {
@@ -18,14 +20,15 @@ const Blogs = () => {
     getBlogs();
   }, []);
   return (
-    <div>
+    <div className="blogsContainer">
       {data &&
         data.map((el, i) => {
           return (
-            <div key={i}>
+            <div className="blogStyle" key={i}>
+
               {el.title}
               {el.secondCategory}
-              <img src={el.image} alt="goy" />
+              <img className="blogImage" src={el.image} alt="goy" />
             </div>
           );
         })}
