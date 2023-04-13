@@ -12,6 +12,7 @@ const Login = () => {
     try {
       await instance.post(`/users/login`, {
         email: emailRef.current.value,
+
         password: passwordRef.current.value,
       });
       toast.success("Successfully");
