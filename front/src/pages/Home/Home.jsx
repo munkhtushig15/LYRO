@@ -1,4 +1,5 @@
 import "./Home.css";
+import SignUp from "../SignUp/SignUp.jsx";
 
 const Home = () => {
   return (
@@ -6,6 +7,7 @@ const Home = () => {
       <header></header>
       <main></main>
       <footer></footer>
+      <SignUp/>
     </div>
   );
 };
