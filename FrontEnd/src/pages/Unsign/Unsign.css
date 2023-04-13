@@ -1,0 +1,113 @@
+.unsignContainer {
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  backdrop-filter: blur(10px);
+  background-image: radial-gradient(#232323 1.6px, transparent 1px);
+  background-size: 30px 30px;
+  background-color: #111;
+  background-repeat: repeat;
+}
+.header {
+  width: 60vw;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20vw;
+  background-color: black;
+}
+.lyro {
+  font-size: 60px;
+  color: white;
+  letter-spacing: 3px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.zurag {
+  width: 60px;
+  height: 60px;
+}
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.home {
+  padding: 5px 10px;
+  /* color: #fff; */
+}
+.HomeSignUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.homeHeseg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mendchilgee {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.HOme {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background-image: radial-gradient(#232323 1.6px, transparent 1px);
+  background-size: 30px 30px;
+  background-color: #111;
+  background-repeat: repeat;
+}
+.travel {
+  font-family: "Roboto Condensed", sans-serif;
+  color: #fff;
+}
+.hi {
+  color: #fff;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.hi {
+  width: 80%;
+  animation-duration: 3s;
+  animation-name: slidein;
+  background-color: #8f43ee;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  75% {
+    font-size: 300%;
+    margin-left: 25%;
+    width: 150%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 80%;
+  }
+}
+.ug {
+  font-family: "Roboto Condensed", sans-serif;
+}
+.ene {
+  size: 10px;
+}
+.goycontainer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
