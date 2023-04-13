@@ -21,6 +21,7 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
+  padding: 15px;
 }
 #outlined-basic {
   width: 20em;

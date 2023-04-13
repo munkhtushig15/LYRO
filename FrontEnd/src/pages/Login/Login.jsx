@@ -1,13 +1,27 @@
 import "./Login.css";
-import TextField from '@mui/material/TextField';
+import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-
+import { useRef } from "react";
+import { instance } from "../../App";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
-  const inputProps = {
-    color: "#fff"
-  }
+  const passwordRef = useRef();
+  const emailRef = useRef();
+  const Login = async () => {
+    try {
+      await instance.post(`/users/login`, {
+        email: emailRef.current.value,
+        password: passwordRef.current.value,
+      });
+      toast.success("Successfully");
+    } catch (error) {
+      toast.error("Failed");
+    }
+  };
   return (
     <div id="Container">
+      <ToastContainer />
       <div className="CenterBox">
         <div className="logoContainer">
           <img
@@ -19,18 +33,21 @@ const Login = () => {
         </div>
         <div className="Inputs">
           <TextField
-          inputProps={inputProps}
+            inputRef={emailRef}
             id="outlined-basic"
             label="LYRO.Mail"
             variant="standard"
           />
           <TextField
+            inputRef={passwordRef}
             id="outlined-basic"
             type={"password"}
             label="Password"
             variant="standard"
           />
-          <Button className="LOGIN" variant="outlined">LOGIN</Button>
+          <Button className="LOGIN" variant="outlined" onClick={Login}>
+            LOGIN
+          </Button>
         </div>
       </div>
     </div>
