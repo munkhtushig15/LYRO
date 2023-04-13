@@ -132,9 +132,15 @@
   transition: 0.3s;
 }
 .cateType:hover {
-  background-color: black;
+  background-image: url("./images/headerPic.jpg");
+  background-position: center;
+  background-size: cover;
   color: #fff;
   cursor: pointer;
 }
 
+/* Big Ads */
 
+.bigAdsContainer {
+  width: 100vw;
+}
