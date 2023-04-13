@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
+import CreatePost from "./pages/CreatePost/Create";
 import axios from "axios";
 export const instance = axios.create({
   baseURL: "http://localhost:9911/",
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/Create" element={<CreatePost />} />
         </Routes>
       </BrowserRouter>
     </div>

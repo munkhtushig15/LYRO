@@ -14,14 +14,15 @@ const BlogSchema = new mongoose.Schema({
     type: String,
   },
   parentCategory: {
-    enum: ["ypon", "mongol"],
+    required: [true, "ParentCategory"],
     type: String,
   },
   category: {
+    required: [true, "Category"],
     type: String,
   },
   secondCategory: {
-    required: [true, "Category"], // uul , ovs , gazar ,gol ,shoroo
+    required: [true, "SecondCategory"], // uul , ovs , gazar ,gol ,shoroo
     type: String,
   },
   user_id: {
@@ -30,17 +31,5 @@ const BlogSchema = new mongoose.Schema({
     required: true,
   },
 });
-const CategorySchema = new mongoose.Schema({
-  category: {
-    parentCategoryName: "mongol",
-    enum: ["dornod", "hovsgol"],
-    type: String,
-  },
-  category2: {
-    parentCategoryName: "ypon",
-    enum: ["asd", "213"],
-    type: String,
-  },
-});
+
 export const Blog = mongoose.model("Blog", BlogSchema);
-export const Category = mongoose.model("Category", CategorySchema);
