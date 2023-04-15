@@ -9,8 +9,8 @@
   background-repeat: repeat;
 }
 .header {
-  width: 60vw;
-  height: 70px;
+  width: 100vw;
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   padding: 10px 20vw;
@@ -32,9 +32,9 @@
   align-items: center;
   gap: 1em;
 }
-.home {
+.Button {
   padding: 5px 10px;
-  /* color: #fff; */
+  color: #fff;
 }
 .HomeSignUp {
   display: flex;
@@ -107,7 +107,7 @@
   size: 10px;
 }
 .goycontainer {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
 }
