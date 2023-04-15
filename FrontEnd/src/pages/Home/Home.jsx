@@ -10,7 +10,9 @@ const Home = () => {
         <BigAds />
         <div className="contents">
           <p className="title">LATEST ISSUE</p>
-          <Blogs />
+          <div className="blogsBigContainer">
+            <Blogs />
+          </div>
         </div>
       </main>
     </div>

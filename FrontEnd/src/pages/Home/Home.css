@@ -35,3 +35,15 @@ main {
   flex-direction: column;
   gap: 4em;
 }
+.blogsBigContainer {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1em;
+}
+.blogStyle {
+  width: 100%;
+}
+.blogImage {
+  width: 100%;
+}
