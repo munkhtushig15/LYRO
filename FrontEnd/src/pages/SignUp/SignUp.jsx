@@ -2,6 +2,9 @@ import React, { useRef } from "react";
 import "./SignUp.css";
 import { instance } from "../../App";
 import { ToastContainer, toast } from "react-toastify";
+import { TextField } from "@mui/material";
+import { Link } from "react-router-dom";
+import MenuItem from "@mui/material/MenuItem";
 import "react-toastify/dist/ReactToastify.css";
 const SignUp = () => {
   const nameRef = useRef();
@@ -31,33 +34,64 @@ const SignUp = () => {
   const toLogin = () => {
     window.location.replace("/Login");
   };
+  const adminOptions = [
+    {
+      value: "admin",
+      label: "Admin",
+    },
+    {
+      value: "normal",
+      label: "Normal",
+    },
+  ];
   return (
     <div className="signupContainer">
       <ToastContainer />
       <div className="centerBox">
         <div className="logoContainer">
-          <img
-            id="Logo"
-            src={require("../../images/logo.png")}
-            alt="logoBsim"
-          />
-          <span id="pageLogoText">LYRO</span>
+          <Link
+            to="/Home"
+            className="logoContainer2"
+            style={{ textDecoration: "none" }}
+          >
+            <img
+              id="Logo"
+              src={require("../../images/logo.png")}
+              alt="logoBsim"
+            />
+            <span id="pageLogoText">LYRO</span>
+          </Link>
         </div>
-        <input placeholder="Name" className="input" ref={nameRef}></input>
-        <input
-          placeholder="NickName"
-          className="input"
-          ref={nickNameRef}
-        ></input>
-        <input placeholder="Email" className="input" ref={emailRef}></input>
-        <input
-          placeholder="Password"
-          className="input"
-          ref={passwordRef}
-        ></input>
-        <input placeholder="Age" className="input" ref={ageRef}></input>
-        <input placeholder="Gender" className="input" ref={genderRef}></input>
-        <input placeholder="Role" className="input" ref={roleRef}></input>
+        <center style={{ marginTop: "0" }}>
+          <input placeholder="Name" className="input" ref={nameRef}></input>
+          <input
+            placeholder="NickName"
+            className="input"
+            ref={nickNameRef}
+          ></input>
+          <input placeholder="Email" className="input" ref={emailRef}></input>
+          <input
+            placeholder="Password"
+            className="input"
+            type="password"
+            ref={passwordRef}
+          ></input>
+          <input placeholder="Age" className="input" ref={ageRef}></input>
+          <input placeholder="Gender" className="input" ref={genderRef}></input>
+          <TextField
+            select
+            inputRef={roleRef}
+            id="outlined-basic2"
+            label="Role"
+            variant="standard"
+          >
+            {adminOptions.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </center>
         <button id="signup" onClick={SignUp}>
           Sign Up!
         </button>

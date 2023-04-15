@@ -11,7 +11,7 @@ const Login = () => {
   const emailRef = useRef();
   const Login = async () => {
     try {
-       const res = await instance.post(`/users/login`, {
+      const res = await instance.post(`/users/login`, {
         email: emailRef.current.value,
 
         password: passwordRef.current.value,
@@ -19,9 +19,7 @@ const Login = () => {
 
       window.location.replace("/");
 
-      window.localStorage.setItem("id" , JSON.stringify(res.data.data.id));
-
-
+      window.localStorage.setItem("id", JSON.stringify(res.data.data.id));
     } catch (error) {
       toast.error("Failed");
     }
@@ -31,12 +29,19 @@ const Login = () => {
       <ToastContainer />
       <div className="CenterBox">
         <div className="logoContainer">
-          <img
-            id="Logo"
-            src={require("../../images/logo.png")}
-            alt="logoBsim"
-          />
-          <span id="pageLogoText">LYRO</span>
+          <Link
+            to="/Home"
+            className="logoContainer"
+            style={{ textDecoration: "none" }}
+          >
+            <img
+              id="Logo"
+              src={require("../../images/logo.png")}
+              alt="logoBsim"
+            />
+
+            <span id="pageLogoText">LYRO</span>
+          </Link>
         </div>
         <div className="Inputs">
           <TextField
