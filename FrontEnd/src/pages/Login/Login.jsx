@@ -30,7 +30,7 @@ const Login = () => {
       <div className="CenterBox">
         <div className="logoContainer">
           <Link
-            to="/"
+            to="/Home"
             className="logoContainer"
             style={{ textDecoration: "none" }}
           >

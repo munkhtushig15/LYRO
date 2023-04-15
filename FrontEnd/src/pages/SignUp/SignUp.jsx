@@ -50,7 +50,7 @@ const SignUp = () => {
       <div className="centerBox">
         <div className="logoContainer">
           <Link
-            to="/"
+            to="/Home"
             className="logoContainer2"
             style={{ textDecoration: "none" }}
           >

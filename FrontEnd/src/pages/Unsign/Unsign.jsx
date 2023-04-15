@@ -14,7 +14,7 @@ const Unsign = () => {
           <h1 className="lyro">LYRO</h1>
         </div>
         <div>
-          <Link to="/">
+          <Link to="/Home">
             <Button style={{ color: "white" }}>Home</Button>
           </Link>
           <Link to="/SignUp">
