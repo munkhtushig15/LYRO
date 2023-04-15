@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import { useRef } from "react";
 import { instance } from "../../App";
 import { ToastContainer, toast } from "react-toastify";
+import { Link } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
   const passwordRef = useRef();
@@ -15,7 +16,7 @@ const Login = () => {
 
         password: passwordRef.current.value,
       });
-      toast.success("Successfully");
+      window.location.replace("/");
     } catch (error) {
       toast.error("Failed");
     }
@@ -46,9 +47,24 @@ const Login = () => {
             label="Password"
             variant="standard"
           />
-          <Button className="LOGIN" variant="outlined" onClick={Login}>
+          <Button
+            className="LOGIN"
+            variant="outlined"
+            onClick={Login}
+            style={{
+              color: "white",
+              borderColor: "white",
+            }}
+          >
             LOGIN
           </Button>
+
+          <center style={{ color: "white" }}>
+            Dont have account?{" "}
+            <Link to="/SignUp" style={{ color: "white", textDecoration: "" }}>
+              Click Here!
+            </Link>
+          </center>
         </div>
       </div>
     </div>

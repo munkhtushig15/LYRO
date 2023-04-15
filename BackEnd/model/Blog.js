@@ -14,14 +14,15 @@ const BlogSchema = new mongoose.Schema({
     type: String,
   },
   parentCategory: {
-    enum: ["ypon", "mongol"],
+    required: [true, "ParentCategory"], 
     type: String,
   },
   category: {
+    required: [true, "Category"], 
     type: String,
   },
   secondCategory: {
-    required: [true, "Category"], // uul , ovs , gazar ,gol ,shoroo
+    required: [true, "secondCategory"], // uul , ovs , gazar ,gol ,shoroo
     type: String,
   },
   user_id: {
