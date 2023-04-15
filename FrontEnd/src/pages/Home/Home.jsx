@@ -17,6 +17,10 @@ const Home = () => {
                 <span className="countriesTitle">Europe</span>
               </div>
               <Blogs />
+              <div className="partOf">
+                <span>Visit</span>
+                <i class="gg-pentagon-right"></i>
+              </div>
             </div>
           </div>
         </div>

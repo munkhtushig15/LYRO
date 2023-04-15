@@ -190,3 +190,10 @@
   display: flex;
   flex-direction: column;
 }
+.blogStyle span {
+  font-family: "Roboto Condensed", sans-serif;
+}
+.blogImage {
+  width: 100%;
+  height: 82%;
+}

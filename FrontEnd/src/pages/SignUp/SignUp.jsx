@@ -95,7 +95,6 @@ const SignUp = () => {
         <button id="signup" onClick={SignUp}>
           Sign Up!
         </button>
-
         <button id="signup" onClick={toLogin}>
           Login
         </button>
