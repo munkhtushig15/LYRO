@@ -17,7 +17,7 @@
 .headerTop {
   width: 80%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 30px;
 }
 .headerTop span {
@@ -115,7 +115,7 @@
   cursor: pointer;
 }
 .cateContainer {
-  width: 80vw;
+  width: 100vw;
   padding: 0 10vw;
   display: flex;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -132,9 +132,34 @@
   transition: 0.3s;
 }
 .cateType:hover {
-  background-color: black;
+  background-image: url("./images/headerPic.jpg");
+  background-position: center;
+  background-size: cover;
   color: #fff;
   cursor: pointer;
 }
 
+/* Big Ads styles */
 
+.bigAdsContainer {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  overflow-y: scroll;
+  justify-items: center;
+  gap: 10px;
+}
+.Ads {
+  width: 100vw;
+  height: 90vh;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Blogs styles */
+
+.blogsContainer {
+  width: 100%;
+  
+}
