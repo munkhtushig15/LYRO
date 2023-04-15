@@ -25,9 +25,12 @@
 }
 #outlined-basic {
   width: 20em;
-  color: #66b2ff;
+  color: white;
   font-family: "Roboto Condensed", sans-serif;
   border-radius: 10px;
+}
+#outlined-basic:hover {
+  background-color: rgba(255, 255, 255, 0.089);
 }
 .logoContainer {
   display: flex;
