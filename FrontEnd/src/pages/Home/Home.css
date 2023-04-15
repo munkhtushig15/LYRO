@@ -8,7 +8,7 @@
   align-items: center;
   width: 100vw;
   justify-content: center;
-  gap: 2em;
+  gap: 1em;
 }
 .title {
   width: 80vw;
@@ -24,7 +24,26 @@
   border-radius: 8px;
 }
 .contents {
-  width: 80vw;
+  width: 100vw;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+.blogsBigContainer {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1em;
+}
+.blogStyle {
+  width: 100%;
+}
+.blogImage {
+  width: 100%;
 }

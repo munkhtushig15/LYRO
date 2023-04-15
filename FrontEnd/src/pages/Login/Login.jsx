@@ -11,12 +11,17 @@ const Login = () => {
   const emailRef = useRef();
   const Login = async () => {
     try {
-      await instance.post(`/users/login`, {
+       const res = await instance.post(`/users/login`, {
         email: emailRef.current.value,
 
         password: passwordRef.current.value,
       });
+
       window.location.replace("/");
+
+      window.localStorage.setItem("id" , JSON.stringify(res.data.data.id));
+
+
     } catch (error) {
       toast.error("Failed");
     }
