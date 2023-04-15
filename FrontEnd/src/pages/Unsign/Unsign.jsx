@@ -1,6 +1,6 @@
 import "./Unsign.css";
 import { Link } from "react-router-dom";
-
+import { Button } from "@mui/material";
 const Unsign = () => {
   return (
     <div className="unsignContainer">
@@ -13,12 +13,12 @@ const Unsign = () => {
           />
           <h1 className="lyro">LYRO</h1>
         </div>
-        <div className="HomeSignUp">
+        <div>
           <Link to="/">
-            <button className="home">Home</button>
+            <Button style={{ color: "white" }}>Home</Button>
           </Link>
-          <Link>
-            <button className="home">Sign up</button>
+          <Link to="/SignUp">
+            <Button style={{ color: "white" }}>Sign Up</Button>
           </Link>
         </div>
       </div>
