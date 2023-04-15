@@ -4,7 +4,6 @@ import Home from "./pages/Home/Home";
 
 import Unsign from "./pages/Unsign/Unsign";
 
-
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 import CreatePost from "./pages/CreatePost/Create";
@@ -21,14 +20,11 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-
-          <Route path="/Unsign" element={<Unsign />} />
-
+          <Route path="/" element={<Unsign />} />
+          <Route path="/Home" element={<Home />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Create" element={<CreatePost />} />
-
         </Routes>
       </BrowserRouter>
     </div>
