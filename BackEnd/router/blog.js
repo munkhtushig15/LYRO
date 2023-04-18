@@ -2,7 +2,6 @@ import express from "express";
 import {
   getAllBlogs,
   createBlog,
-  getBlogById,
   getBlogByCategory,
   getBlogByCategory2,
   getBlogByCategory3,
@@ -15,6 +14,6 @@ blogRouter.get("/cate", getBlogByCategory);
 blogRouter.get("/cate2", getBlogByCategory2);
 blogRouter.get("/cate3", getBlogByCategory3);
 blogRouter.post("/createBlog", createBlog);
-blogRouter.get("/:id", getBlogById);
+// blogRouter.post("/:id", addStars);
 
 export default blogRouter;
