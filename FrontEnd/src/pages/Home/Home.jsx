@@ -11,7 +11,17 @@ const Home = () => {
         <div className="contents">
           <p className="title">LATEST ISSUE</p>
           <div className="blogsBigContainer">
-            <Blogs />
+            <div className="blogTitle">
+              <div className="titleCombine">
+                <i class="gg-shape-circle countriesTitle"></i>
+                <span className="countriesTitle">Cities</span>
+              </div>
+              <Blogs />
+              <div className="partOf">
+                <span>Visit</span>
+                <i class="gg-arrow-right-o"></i>
+              </div>
+            </div>
           </div>
         </div>
       </main>

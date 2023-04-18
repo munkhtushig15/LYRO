@@ -13,12 +13,9 @@ const Login = () => {
     try {
       const res = await instance.post(`/users/login`, {
         email: emailRef.current.value,
-
         password: passwordRef.current.value,
       });
-
-      window.location.replace("/");
-
+      window.location.replace("/"); 
       window.localStorage.setItem("id", JSON.stringify(res.data.data.id));
     } catch (error) {
       toast.error("Failed");
@@ -28,6 +25,7 @@ const Login = () => {
     <div id="Container">
       <ToastContainer />
       <div className="CenterBox">
+
         <div className="logoContainer">
           <Link
             to="/Home"
@@ -42,6 +40,21 @@ const Login = () => {
             <span id="pageLogoText2">LYRO</span>
           </Link>
         </div>
+
+        <Link
+          to="/Home"
+          className="logoContainer"
+          style={{ textDecoration: "none" }}
+        >
+          <img
+            id="Logo"
+            src={require("../../images/logo.png")}
+            alt="logoBsim"
+          />
+
+          <span id="pageLogoText">LYRO</span>
+        </Link>
+
         <div className="Inputs">
           <TextField
             inputRef={emailRef}
@@ -67,7 +80,6 @@ const Login = () => {
           >
             LOGIN
           </Button>
-
           <center style={{ color: "white" }}>
             Dont have account?{" "}
             <Link to="/SignUp" style={{ color: "white", textDecoration: "" }}>
