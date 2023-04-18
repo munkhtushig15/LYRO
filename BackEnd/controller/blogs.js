@@ -33,27 +33,7 @@ export const createBlog = async (req, res) => {
     });
   }
 };
-export const addStars = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const { star } = req.body;
-    const blog = await Blog.findById(id);
-    await Blog.findByIdAndUpdate(
-      { _id: id },
-      {
-        user: blog.user + 1,
-        stars: Number(blog.stars) + Number(star),
-      }
-    );
-    res.status(200).send({
-      data: blog,
-    });
-  } catch (error) {
-    res.status(400).send({
-      data: error.message,
-    });
-  }
-};
+
 export const getBlogByCategory = async (req, res) => {
   try {
     const { parentCategory } = req.body;
