@@ -25,6 +25,22 @@ const Login = () => {
     <div id="Container">
       <ToastContainer />
       <div className="CenterBox">
+
+        <div className="logoContainer">
+          <Link
+            to="/Home"
+            className="logoContainer"
+            style={{ textDecoration: "none" }}
+          >
+            <img
+              id="Logo2"
+              src={require("../../images/logo.png")}
+              alt="logoBsim"
+            />
+            <span id="pageLogoText2">LYRO</span>
+          </Link>
+        </div>
+
         <Link
           to="/Home"
           className="logoContainer"
@@ -38,6 +54,7 @@ const Login = () => {
 
           <span id="pageLogoText">LYRO</span>
         </Link>
+
         <div className="Inputs">
           <TextField
             inputRef={emailRef}
