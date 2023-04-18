@@ -1,7 +1,9 @@
 import { Blog } from "../model/Blog.js";
 export const getAllBlogs = async (req, res) => {
   try {
-    const blog = await Blog.find({});
+    const Skip = req.query.skip;
+    const Limit = req.query.limit;
+    const blog = await Blog.find({}).limit(Limit).skip(Skip);
     res.status(200).send({
       data: blog,
       message: "Nice",
