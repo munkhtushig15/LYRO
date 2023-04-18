@@ -6,7 +6,7 @@ const Blog = () => {
   const [data, setData] = useState([]);
   const getBlogs = async () => {
     try {
-      const res = await instance.get("/blogs");
+      const res = await instance.get("/blogs/?limit=4");
       setData(
         res.data.data.map((el) => {
           return el;
