@@ -37,6 +37,7 @@
   align-items: center;
   justify-content: center;
   padding: 2em;
+  height: 20vh;
 }
 #Logo {
   width: 60px;

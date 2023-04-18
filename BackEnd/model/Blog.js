@@ -14,18 +14,23 @@ const BlogSchema = new mongoose.Schema({
     type: String,
   },
   parentCategory: {
-    required: [true, "ParentCategory"], 
+    required: [true, "ParentCategory"],
     type: String,
   },
   category: {
-    required: [true, "Category"], 
+    required: [true, "Category"],
     type: String,
   },
   secondCategory: {
     required: [true, "SecondCategory"],
     type: String,
   },
-
+  stars: {
+    type: Number,
+  },
+  user: {
+    type: Number,
+  },
   user_id: {
     type: String,
     ref: "User",

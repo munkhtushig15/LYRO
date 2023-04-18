@@ -48,7 +48,7 @@ const SignUp = () => {
     <div className="signupContainer">
       <ToastContainer />
       <div className="centerBox">
-        <div className="logoContainer">
+        <div className="logoContainer2">
           <Link
             to="/Home"
             className="logoContainer2"
@@ -67,7 +67,7 @@ const SignUp = () => {
           <input
             placeholder="NickName"
             className="input"
-            ref={nickNameRef}
+            ref={nickNameRef} d
           ></input>
           <input placeholder="Email" className="input" ref={emailRef}></input>
           <input

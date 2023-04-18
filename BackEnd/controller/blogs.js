@@ -15,7 +15,15 @@ export const getAllBlogs = async (req, res) => {
 
 export const createBlog = async (req, res) => {
   try {
+    // const { _id } = res.body;
     const blog = await Blog.create(req.body);
+    // const blogStar = Blog.findByIdAndUpdate(
+    //   { _id: _id },
+    //   {
+    //     stars: 0,
+    //   }
+    // );
+    // console.log(blogStar);
     res.status(200).send({
       data: blog,
     });
@@ -25,10 +33,18 @@ export const createBlog = async (req, res) => {
     });
   }
 };
-export const getBlogById = async (req, res) => {
+export const addStars = async (req, res) => {
   try {
     const { id } = req.params;
+    const { star } = req.body;
     const blog = await Blog.findById(id);
+    await Blog.findByIdAndUpdate(
+      { _id: id },
+      {
+        user: blog.user + 1,
+        stars: Number(blog.stars) + Number(star),
+      }
+    );
     res.status(200).send({
       data: blog,
     });

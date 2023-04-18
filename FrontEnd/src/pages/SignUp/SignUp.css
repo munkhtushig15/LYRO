@@ -78,10 +78,6 @@ input:hover {
   height: 60px;
 }
 
-.logoContainer {
-  display: flex;
-}
-
 #pageLogoText {
   height: 60px;
   color: #fff;
