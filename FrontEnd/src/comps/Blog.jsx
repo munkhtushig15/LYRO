@@ -1,9 +1,8 @@
 import { instance } from "../App";
 import { useEffect, useState } from "react";
 import "../App.css";
-import Blog from "./Blog";
 
-const Blogs = () => {
+const Blog = () => {
   const [data, setData] = useState([]);
   const getBlogs = async () => {
     try {
@@ -21,11 +20,20 @@ const Blogs = () => {
     getBlogs();
   }, []);
   return (
-    <div className="blogsContainer">
-      <div className="blogsContainer">
-        <Blog />
-      </div>
+    <div className="blogContainer">
+      {data &&
+        data.map((el, i) => {
+          return (
+            <div>
+              <div className="blogStyle" key={i}>
+                <img className="blogImage" src={el.image} alt="goy" />
+                <span>{el.title}</span>
+                <span>{el.secondCategory}</span>
+              </div>
+            </div>
+          );
+        })}
     </div>
   );
 };
-export default Blogs;
+export default Blog;

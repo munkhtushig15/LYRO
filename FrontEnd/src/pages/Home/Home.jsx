@@ -14,12 +14,12 @@ const Home = () => {
             <div className="blogTitle">
               <div className="titleCombine">
                 <i class="gg-shape-circle countriesTitle"></i>
-                <span className="countriesTitle">Europe</span>
+                <span className="countriesTitle">Cities</span>
               </div>
               <Blogs />
               <div className="partOf">
                 <span>Visit</span>
-                <i class="gg-pentagon-right"></i>
+                <i class="gg-arrow-right-o"></i>
               </div>
             </div>
           </div>
