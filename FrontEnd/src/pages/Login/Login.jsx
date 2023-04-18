@@ -35,12 +35,11 @@ const Login = () => {
             style={{ textDecoration: "none" }}
           >
             <img
-              id="Logo"
+              id="Logo2"
               src={require("../../images/logo.png")}
               alt="logoBsim"
             />
-
-            <span id="pageLogoText">LYRO</span>
+            <span id="pageLogoText2">LYRO</span>
           </Link>
         </div>
         <div className="Inputs">
