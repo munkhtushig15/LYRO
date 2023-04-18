@@ -39,11 +39,23 @@ main {
   width: 80vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border-image: url("../../images/headerPic.jpg") 50 round;
   gap: 1em;
 }
 .blogStyle {
   width: 100%;
+  padding: 2px;
+  background-image: url("../../images/headerPic.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 3px;
 } 
+.blogContainer {
+  border-image: url("../../images/headerPic.jpg") 50 round;
+}
+.blogStyle span {
+  color: #fff;
+}
 .blogTitle {
   border: 1px solid #000;
   border-radius: 20px;
