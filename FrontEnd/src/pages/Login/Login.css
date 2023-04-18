@@ -36,11 +36,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2em;
+
   height: 20vh;
 }
 #Logo2 {
-  width: 60px;
+  width: 60px;  
 }
 #pageLogoText2 {
   height: 60px;
@@ -51,7 +51,6 @@
 
   letter-spacing: 8px;
   align-items: center;
-
 }
 .LOGIN {
   letter-spacing: 5px;
