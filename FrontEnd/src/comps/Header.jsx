@@ -52,7 +52,11 @@ const Header = () => {
             <span className="bottomLogo">Pinecone Demo Day</span>
           </div>
         </Link>
-        <div className="searchLine">
+        <div className="rightSide">
+          <Link to="/CreateBlog" className="createBlog">
+            <i class="gg-arrow-right-r"></i>
+            <span>Create Blog</span>
+          </Link>
           <Link to={"/Search"} className="searchLine">
             <input type="text" placeholder="Search ..." />
             <button className="searchButton">

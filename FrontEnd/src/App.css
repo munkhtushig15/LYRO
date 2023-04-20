@@ -57,6 +57,23 @@
   color: #fff;
   font-family: "Roboto Condensed", sans-serif;
 }
+.rightSide {
+  display: flex;
+  gap: 2em;
+}
+.createBlog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: "Roboto Condensed", sans-serif;
+  gap: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.createBlog:hover {
+  color: #fff;
+}
 .searchLine {
   text-decoration: none;
   display: flex;
@@ -194,7 +211,12 @@
   height: 90%;
   display: flex;
   flex-direction: column;
+  transition: 0.2s;
+  cursor: pointer;
 }
+.blogStyle:hover {
+  transform: scale(1.1);
+} 
 .blogStyle span {
   font-family: "Roboto Condensed", sans-serif;
 }

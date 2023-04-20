@@ -24,13 +24,13 @@ const Blog = () => {
       {data &&
         data.map((el, i) => {
           return (
-            <div>
+            <>
               <div className="blogStyle" key={i}>
                 <img className="blogImage" src={el.image} alt="goy" />
                 <span>{el.title}</span>
                 <span>{el.secondCategory}</span>
               </div>
-            </div>
+            </>
           );
         })}
     </div>
