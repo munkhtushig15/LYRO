@@ -2,6 +2,8 @@ import "./Home.css";
 import Header from "../../comps/Header";
 import BigAds from "../../comps/BigAds";
 import Blogs from "../../comps/Blogs";
+import Comments from "../../comps/Comments";
+
 const Home = () => {
   return (
     <div className="homeContainer">
@@ -24,6 +26,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <Comments />
       </main>
     </div>
   );
