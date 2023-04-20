@@ -6,6 +6,7 @@ import { TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 import MenuItem from "@mui/material/MenuItem";
 import "react-toastify/dist/ReactToastify.css";
+
 const SignUp = () => {
   const nameRef = useRef();
   const nickNameRef = useRef();
