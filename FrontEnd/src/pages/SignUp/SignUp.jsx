@@ -6,6 +6,7 @@ import { TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 import MenuItem from "@mui/material/MenuItem";
 import "react-toastify/dist/ReactToastify.css";
+
 const SignUp = () => {
   const nameRef = useRef();
   const nickNameRef = useRef();
@@ -48,7 +49,7 @@ const SignUp = () => {
     <div className="signupContainer">
       <ToastContainer />
       <div className="centerBox">
-        <div className="logoContainer">
+        <div className="logoContainer2">
           <Link
             to="/Home"
             className="logoContainer2"
@@ -67,7 +68,7 @@ const SignUp = () => {
           <input
             placeholder="NickName"
             className="input"
-            ref={nickNameRef}
+            ref={nickNameRef} d
           ></input>
           <input placeholder="Email" className="input" ref={emailRef}></input>
           <input

@@ -36,16 +36,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2em;
+
+  height: 20vh;
 }
-#Logo {
-  width: 60px;
+#Logo2 {
+  width: 60px;  
 }
-#pageLogoText {
+#pageLogoText2 {
   height: 60px;
+  display: flex;
   color: #fff;
   font-size: 50px;
   font-family: "Roboto Condensed", sans-serif;
+
+  letter-spacing: 8px;
+  align-items: center;
 }
 .LOGIN {
   letter-spacing: 5px;

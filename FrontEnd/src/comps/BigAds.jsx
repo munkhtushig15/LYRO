@@ -12,19 +12,19 @@ const BigAds = () => {
 
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
-      <Carousel.Item className="adsCOntainer">
+      <Carousel.Item className="adsCOntainer glassEffect">
         <Carousel.Caption>
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item className="adsCOntainerTwo">
+      <Carousel.Item className="adsCOntainerTwo glassEffect">
         <Carousel.Caption>
           <h3>Second slide label</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item className="adsCOntainerThree">
+      <Carousel.Item className="adsCOntainerThree glassEffect">
         <Carousel.Caption>
           <h3>Third slide label</h3>
           <p>
@@ -32,7 +32,7 @@ const BigAds = () => {
           </p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item className="adsCOntainerFour">
+      <Carousel.Item className="adsCOntainerFour glassEffect">
         <Carousel.Caption>
           <h3>Third slide label</h3>
           <p>

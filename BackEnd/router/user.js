@@ -5,7 +5,6 @@ import {
   getUserByObject,
   getUserById,
 } from "../controller/users.js";
-
 const userRouter = express.Router();
 
 userRouter.get("/", getAllUser);

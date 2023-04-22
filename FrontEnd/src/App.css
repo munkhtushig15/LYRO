@@ -58,6 +58,7 @@
   font-family: "Roboto Condensed", sans-serif;
 }
 .searchLine {
+  text-decoration: none;
   display: flex;
   height: 3em;
 }
@@ -175,10 +176,14 @@
   background-position: center;
   background-size: cover;
 }
+.glassEffect {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
 
 /* Blogs styles */
 
-.blogsContainer {
+.blogContainer {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -199,6 +204,7 @@
 }
 
 
+
 .FooterContainer{
   width: 100vw;
   height: 150px;
@@ -216,6 +222,9 @@
   margin-right: 15px;
 }
 
-.FooterMiniContainer{
+.commentsContainer {
+  width: 100vw;
   display: flex;
+  justify-content: center;
 }
+
