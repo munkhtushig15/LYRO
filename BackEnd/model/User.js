@@ -43,6 +43,11 @@ UserSchema.virtual("Blog", {
   localField: "_id",
   foreignField: "user_id",
 });
+UserSchema.virtual("Approve", {
+  ref: "Approve",
+  localField: "_id",
+  foreignField: "user_id",
+});
 UserSchema.pre("save", async function (next) {
   try {
     const salt = await bcrypt.genSalt(10);

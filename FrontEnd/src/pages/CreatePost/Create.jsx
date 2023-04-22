@@ -1,5 +1,6 @@
 import { instance } from "../../App";
 import { TextField } from "@mui/material";
+import { Button } from "@mui/material";
 import { useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -35,7 +36,9 @@ const CreatePost = () => {
         inputRef={secondCategoryRef}
         label="Gol Us Gazar Shoroo"
       ></TextField>
-      <button onClick={Create}>Create</button>
+      <Button onClick={Create} style={{ width: "150px", height: "57px" }}>
+        Create
+      </Button>
     </div>
   );
 };

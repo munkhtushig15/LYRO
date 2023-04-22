@@ -1,4 +1,5 @@
 import { Blog } from "../model/Blog.js";
+import { Approve } from "../model/Blog.js";
 export const getAllBlogs = async (req, res) => {
   try {
     const Skip = req.query.skip;
@@ -17,15 +18,8 @@ export const getAllBlogs = async (req, res) => {
 
 export const createBlog = async (req, res) => {
   try {
-    // const { _id } = res.body;
     const blog = await Blog.create(req.body);
-    // const blogStar = Blog.findByIdAndUpdate(
-    //   { _id: _id },
-    //   {
-    //     stars: 0,
-    //   }
-    // );
-    // console.log(blogStar);
+    await Approve.create(req.body);
     res.status(200).send({
       data: blog,
     });
@@ -53,6 +47,27 @@ export const addStars = async (req, res) => {
   } catch (error) {
     res.status(400).send({
       data: error.message,
+    });
+  }
+};
+export const approveBlog = async (req, res) => {
+  try {
+    const { _id, blog_id } = req.body;
+    const approve = await Approve.findById({ _id: _id });
+    await Blog.findByIdAndUpdate(
+      { _id: blog_id },
+      {
+        status: "Public",
+      }
+    );
+    await Approve.findByIdAndDelete({ _id: _id });
+    res.status(200).send({
+      data: approve,
+      message: "Approved",
+    });
+  } catch (error) {
+    res.status(400).send({
+      message: error.message,
     });
   }
 };
