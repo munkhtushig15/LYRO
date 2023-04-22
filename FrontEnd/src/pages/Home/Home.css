@@ -39,14 +39,26 @@ main {
   width: 80vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border-image: url("../../images/headerPic.jpg") 50 round;
   gap: 1em;
 }
 .blogStyle {
   width: 100%;
+  padding: 2px;
+  background-image: url("../../images/headerPic.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 3px;
+} 
+.blogContainer {
+  border-image: url("../../images/headerPic.jpg") 50 round;
+}
+.blogStyle span {
+  color: #fff;
 }
 .blogTitle {
   border: 1px solid #000;
-  border-radius: 10px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   padding: 2em;
@@ -68,5 +80,15 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1em;
+  gap: 5px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-image: url("../../images/headerPic.jpg");
+  color: #fff;
+  cursor: pointer;
+}
+.partOf span {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: large;
 }

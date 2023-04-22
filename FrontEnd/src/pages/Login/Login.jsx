@@ -15,7 +15,7 @@ const Login = () => {
         email: emailRef.current.value,
         password: passwordRef.current.value,
       });
-      window.location.replace("/"); 
+      window.location.replace("/");
       window.localStorage.setItem("id", JSON.stringify(res.data.data.id));
     } catch (error) {
       toast.error("Failed");
@@ -31,13 +31,13 @@ const Login = () => {
           style={{ textDecoration: "none" }}
         >
           <img
-            id="Logo"
+            id="Logo2"
             src={require("../../images/logo.png")}
             alt="logoBsim"
           />
-
-          <span id="pageLogoText">LYRO</span>
+          <span id="pageLogoText2">LYRO</span>
         </Link>
+
         <div className="Inputs">
           <TextField
             inputRef={emailRef}

@@ -1,8 +1,10 @@
 import express from "express";
+import { adminCheck } from "../middleware/middleware.js";
 import {
   getAllBlogs,
   createBlog,
-  getBlogById,
+  approveBlog,
+  addStars,
   getBlogByCategory,
   getBlogByCategory2,
   getBlogByCategory3,
@@ -15,6 +17,7 @@ blogRouter.get("/cate", getBlogByCategory);
 blogRouter.get("/cate2", getBlogByCategory2);
 blogRouter.get("/cate3", getBlogByCategory3);
 blogRouter.post("/createBlog", createBlog);
-blogRouter.get("/:id", getBlogById);
+blogRouter.post("/approveBlog", adminCheck, approveBlog);
+blogRouter.post("/review/:id", addStars);
 
 export default blogRouter;
