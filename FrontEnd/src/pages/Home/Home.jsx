@@ -1,5 +1,6 @@
 import "./Home.css";
 import Header from "../../comps/Header";
+import Footer from "../../comps/Footer"
 import BigAds from "../../comps/BigAds";
 import Blogs from "../../comps/Blogs";
 const Home = () => {
@@ -25,6 +26,7 @@ const Home = () => {
           </div>
         </div>
       </main>
+      <Footer/>
     </div>
   );
 };
