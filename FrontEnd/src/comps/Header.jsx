@@ -68,7 +68,7 @@ const Header = () => {
         </div>
         <div className="cateType">
           <i class="gg-arrow-down-o"></i>
-          <span>Beach</span>
+          <span>Breach</span>
         </div>
         <div className="cateType">
           <i class="gg-arrow-down-o"></i>
