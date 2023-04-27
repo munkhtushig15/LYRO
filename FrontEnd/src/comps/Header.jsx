@@ -15,6 +15,15 @@ const Header = () => {
     setAge(res.data.data.age);
     setIsName(true);
   };
+  const logOut = () => {
+    window.localStorage.removeItem("user_id");
+    window.location.replace("/Home");
+  };
+  const AboutUs = () => {
+    window.location.replace(
+      "https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUJcmljayByb2xs"
+    );
+  };
   useEffect(() => {
     getUser();
   });
@@ -22,19 +31,25 @@ const Header = () => {
     <div className="headerContainer">
       <div className="headerTop">
         {isName ? (
-          <Button
-            style={{
-              color: "white",
-              fontFamily: "Roboto Condensed, sans-serif",
-            }}
-          >
-            <div className="arrows">
-              <i className="gg-profile"></i>
+          <>
+            <Button
+              style={{
+                color: "white",
+                fontFamily: "Roboto Condensed, sans-serif",
+              }}
+            >
+              <div className="arrows">
+                <i className="gg-profile"></i>
 
-              {name}
-              {age}
-            </div>
-          </Button>
+                {name}
+                {age}
+              </div>
+            </Button>
+            <Button onClick={logOut}>Log Out</Button>
+            <Button style={{ target: "blank" }} onClick={AboutUs}>
+              History
+            </Button>
+          </>
         ) : (
           <Link
             to="/Login"
@@ -50,6 +65,16 @@ const Header = () => {
             </div>
           </Link>
         )}
+        <Link
+          to="/Create"
+          style={{
+            textDecoration: "none",
+            color: "white",
+            fontFamily: "Roboto Condensed, sans-serif",
+          }}
+        >
+          Create
+        </Link>
       </div>
       <div className="headerLogoContainer">
         <Link
@@ -82,18 +107,18 @@ const Header = () => {
         </div>
       </div>
       <div className="cateContainer">
-        <div className="cateType">
+        <Link to="/Mountian" className="cateType">
           <i className="gg-arrow-down-o"></i>
           <span>Mountain</span>
-        </div>
+        </Link>
         <div className="cateType">
           <i className="gg-arrow-down-o"></i>
-          <span>Breach</span>
+          <span>Beach</span>
         </div>
-        <div className="cateType">
+        <Link to="/City" className="cateType">
           <i className="gg-arrow-down-o"></i>
           <span>City</span>
-        </div>
+        </Link>
         <div className="cateType">
           <i className="gg-arrow-down-o"></i>
           <span>Forest</span>
