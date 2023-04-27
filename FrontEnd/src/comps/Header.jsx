@@ -4,6 +4,19 @@ import { instance } from "../App";
 import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
 const Header = () => {
+  // <><><><><><><><> right side style <><><><><><><><>
+  const [isClick, setIsClick] = useState(false);
+
+  const getClick = () => {
+    if (isClick === false) {
+      setIsClick(true);
+    } else {
+      setIsClick(false);
+    }
+  };
+
+  //<><><><><><><><><><><><><><><><><><><><><><><><><><>
+
   const [name, setName] = useState();
   const [age, setAge] = useState();
   const [isName, setIsName] = useState(false);
@@ -19,91 +32,100 @@ const Header = () => {
     getUser();
   });
   return (
-    <div className="headerContainer">
-      <div className="headerTop">
-        {isName ? (
-          <Button
-            style={{
-              color: "white",
-              fontFamily: "Roboto Condensed, sans-serif",
-            }}
-          >
-            <div className="arrows">
-              <i className="gg-profile"></i>
+    <>
+      <div className="headerContainer">
+        <div className="headerTop">
+          {isName ? (
+            <Button
+              onClick={getClick}
+              style={{
+                color: "white",
+                fontFamily: "Roboto Condensed, sans-serif",
+              }}
+            >
+              <div className="arrows">
+                <i className="gg-profile"></i>
 
-              {name}
-              {age}
-            </div>
-          </Button>
-        ) : (
+                {name}
+                {age}
+              </div>
+            </Button>
+          ) : (
+            <Link
+              to="/Login"
+              style={{
+                textDecoration: "none",
+                color: "white",
+                fontFamily: "Roboto Condensed, sans-serif",
+              }}
+            >
+              <div className="arrows">
+                <i className="gg-arrow-right-r"></i>
+                Login
+              </div>
+            </Link>
+          )}
+        </div>
+        <div className="headerLogoContainer">
           <Link
-            to="/Login"
+            to="/Home"
             style={{
               textDecoration: "none",
               color: "white",
               fontFamily: "Roboto Condensed, sans-serif",
             }}
           >
-            <div className="arrows">
-              <i className="gg-arrow-right-r"></i>
-              Login
+            <div className="topLogoBox">
+              <div className="topLogo">
+                <img
+                  id="pageLogo"
+                  src={require("../images/logo.png")}
+                  alt="@-@"
+                />
+                <span id="pageLogoText">LYRO</span>
+              </div>
+              <span className="bottomLogo">Pinecone Demo Day</span>
             </div>
           </Link>
-        )}
-      </div>
-      <div className="headerLogoContainer">
-        <Link
-          to="/Home"
-          style={{
-            textDecoration: "none",
-            color: "white",
-            fontFamily: "Roboto Condensed, sans-serif",
-          }}
-        >
-          <div className="topLogoBox">
-            <div className="topLogo">
-              <img
-                id="pageLogo"
-                src={require("../images/logo.png")}
-                alt="@-@"
-              />
-              <span id="pageLogoText">LYRO</span>
-            </div>
-            <span className="bottomLogo">Pinecone Demo Day</span>
+          <div className="searchLine">
+            <Link to={"/Search"} className="searchLine">
+              <input type="text" placeholder="Search ..." />
+              <button className="searchButton">
+                <i className="gg-search searchButton"></i>
+              </button>
+            </Link>
           </div>
-        </Link>
-        <div className="searchLine">
-          <Link to={"/Search"} className="searchLine">
-            <input type="text" placeholder="Search ..." />
-            <button className="searchButton">
-              <i className="gg-search searchButton"></i>
-            </button>
-          </Link>
+        </div>
+        <div className="cateContainer">
+          <div className="cateType">
+            <i className="gg-arrow-down-o"></i>
+            <span>Mountain</span>
+          </div>
+          <div className="cateType">
+            <i className="gg-arrow-down-o"></i>
+            <span>Breach</span>
+          </div>
+          <div className="cateType">
+            <i className="gg-arrow-down-o"></i>
+            <span>City</span>
+          </div>
+          <div className="cateType">
+            <i className="gg-arrow-down-o"></i>
+            <span>Forest</span>
+          </div>
+          <div className="cateType">
+            <i className="gg-arrow-down-o"></i>
+            <span>Land</span>
+          </div>
         </div>
       </div>
-      <div className="cateContainer">
-        <div className="cateType">
-          <i className="gg-arrow-down-o"></i>
-          <span>Mountain</span>
+      {isClick ? <></> : (
+        <div className="rightSideProfile">
+          <p>Hello Profile</p>
+          <button onClick={getClick}>X</button>
         </div>
-        <div className="cateType">
-          <i className="gg-arrow-down-o"></i>
-          <span>Breach</span>
-        </div>
-        <div className="cateType">
-          <i className="gg-arrow-down-o"></i>
-          <span>City</span>
-        </div>
-        <div className="cateType">
-          <i className="gg-arrow-down-o"></i>
-          <span>Forest</span>
-        </div>
-        <div className="cateType">
-          <i className="gg-arrow-down-o"></i>
-          <span>Land</span>
-        </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
