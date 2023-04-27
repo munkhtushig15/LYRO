@@ -15,7 +15,20 @@ export const getAllBlogs = async (req, res) => {
     });
   }
 };
-
+export const getBlogById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const blog = await Blog.findById({ _id: id });
+    res.status(200).send({
+      data: blog,
+      message: "Nice",
+    });
+  } catch (error) {
+    res.status(400).send({
+      data: error.message,
+    });
+  }
+};
 export const createBlog = async (req, res) => {
   try {
     const blog = await Blog.create(req.body);
@@ -71,7 +84,7 @@ export const approveBlog = async (req, res) => {
     });
   }
 };
-export const getBlogByCategory = async (req, res) => {
+export const getBlogByParentCate = async (req, res) => {
   try {
     const { parentCategory } = req.body;
     const blog = await Blog.find({
@@ -86,12 +99,12 @@ export const getBlogByCategory = async (req, res) => {
     });
   }
 };
-export const getBlogByCategory2 = async (req, res) => {
+export const getBlogByCategory = async (req, res) => {
   try {
-    const { parentCategory, secondCategory } = req.body;
+    const { parentCategory, category } = req.body;
     const blog = await Blog.find({
       parentCategory: parentCategory,
-      secondCategory: secondCategory,
+      category: category,
     });
     res.status(200).send({
       data: blog,
@@ -102,7 +115,7 @@ export const getBlogByCategory2 = async (req, res) => {
     });
   }
 };
-export const getBlogByCategory3 = async (req, res) => {
+export const getBlogBySecondCate = async (req, res) => {
   try {
     const { parentCategory, secondCategory, category } = req.body;
     const blog = await Blog.find({

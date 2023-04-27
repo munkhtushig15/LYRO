@@ -19,7 +19,7 @@ const CreatePost = () => {
       parentCategory: parentCategoryRef.current.value,
       category: categoryRef.current.value,
       secondCategory: secondCategoryRef.current.value,
-      user_id: JSON.parse(localStorage.getItem("id")),
+      user_id: JSON.parse(localStorage.getItem("user_id")),
     });
     toast.success("Created");
     console.log(res);

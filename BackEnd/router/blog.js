@@ -4,18 +4,19 @@ import {
   getAllBlogs,
   createBlog,
   approveBlog,
+  getBlogById,
   addStars,
   getBlogByCategory,
-  getBlogByCategory2,
-  getBlogByCategory3,
+  getBlogByParentCate,
+  getBlogBySecondCate,
 } from "../controller/blogs.js";
 
 const blogRouter = express.Router();
 
-blogRouter.get("/", getAllBlogs);
-blogRouter.get("/cate", getBlogByCategory);
-blogRouter.get("/cate2", getBlogByCategory2);
-blogRouter.get("/cate3", getBlogByCategory3);
+blogRouter.get("/", getAllBlogs).get("/:id", getBlogById);
+blogRouter.post("/Pcate", getBlogByParentCate);
+blogRouter.post("/Ccate", getBlogByCategory);
+blogRouter.post("/Scate", getBlogBySecondCate);
 blogRouter.post("/createBlog", createBlog);
 blogRouter.post("/approveBlog", adminCheck, approveBlog);
 blogRouter.post("/review/:id", addStars);
