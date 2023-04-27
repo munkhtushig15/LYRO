@@ -205,10 +205,16 @@
   height: 15vh;
 }
 
-.FooterContainer {
+
+
+
+
+
+.FooterContainer{
+
   width: 100vw;
-  height: 150px;
   display: flex;
+
   background-color: black;
   color: white;
   justify-content: space-evenly;
@@ -221,6 +227,41 @@
   height: 25px;
   margin-right: 15px;
 }
+
+
+  justify-content: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-image: url("./images/headerPic.jpg");
+  padding: 5em 0;
+  background-size: cover;
+}
+.footerMiniContainer {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footerLogo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.footerTexts {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #fff;
+  font-size: 60px;
+  letter-spacing: 10px;
+}
+.logoSize {
+  width: 60px;
+}
+.footerTextsMini {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #fff;
+  font-size: large;
+}
+
+
 
 .commentsContainer {
   width: 100vw;
