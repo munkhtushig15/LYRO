@@ -103,11 +103,10 @@ export const getBlogByCategory = async (req, res) => {
   try {
     const { parentCategory, category } = req.body;
     const blog = await Blog.find({
-      parentCategory: parentCategory,
       category: category,
     });
     res.status(200).send({
-      data: blog,
+      data: blog, 
     });
   } catch (error) {
     res.status(400).send({
@@ -119,9 +118,7 @@ export const getBlogBySecondCate = async (req, res) => {
   try {
     const { parentCategory, secondCategory, category } = req.body;
     const blog = await Blog.find({
-      parentCategory: parentCategory,
       secondCategory: secondCategory,
-      category: category,
     });
     res.status(200).send({
       data: blog,
