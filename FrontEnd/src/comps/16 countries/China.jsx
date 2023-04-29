@@ -37,11 +37,11 @@ const China = () => {
   return (
     <div className="blogContainer">
       {data &&
-        data.map((el, i) => {
+        data.map((el, u) => {
           return (
-            <div>
+            <div key={u}>
               <Button onClick={() => getBlogById(el._id)}>
-                <div className="blogStyle" key={i}>
+                <div className="blogStyle">
                   <img className="blogImage" src={el.image} alt="goy" />
                   <span>{el.title}</span>
                   <span>{el.secondCategory}</span>

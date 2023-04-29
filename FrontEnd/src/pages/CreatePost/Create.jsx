@@ -63,7 +63,7 @@ const CreatePost = () => {
         label="Gol us gazar shoroo"
         variant="standard"
       >
-        {secondCategoryOptions.map((option) => (  
+        {secondCategoryOptions.map((option) => (
           <MenuItem key={option.value} value={option.value}>
             {option.label}
           </MenuItem>

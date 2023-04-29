@@ -6,7 +6,7 @@ const MongoliaC = () => {
     <div className="blogsBigContainer">
       <div className="blogTitle">
         <div className="titleCombine">
-          <i class="gg-shape-circle countriesTitle"></i>
+          <i className="gg-shape-circle countriesTitle"></i>
           <span className="countriesTitle">Mongolia</span>
         </div>
         <div className="blogsContainer">

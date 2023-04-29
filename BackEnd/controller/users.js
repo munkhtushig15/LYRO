@@ -70,7 +70,7 @@ export const getUserByObject = async (req, res) => {
 export const getUserById = async (req, res) => {
   try {
     const { id } = req.params;
-    const user = await User.findById(id).populate("Approve").populate("Blog");
+    const user = await User.findById(id).populate("Blog").populate("Favorite");
     res.status(200).send({
       data: user,
     });
