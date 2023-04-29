@@ -26,14 +26,21 @@ const BlogSchema = new mongoose.Schema({
     type: String,
   },
   stars: {
+    default: "0",
     type: Number,
   },
   user: {
+    default: "0",
     type: Number,
   },
-  status: {
-    enum: ["Only me", "Public"],
-    default: "Only me",
+  user_id: {
+    type: String,
+    ref: "User",
+    required: true,
+  },
+});
+const FavoriteSchema = mongoose.Schema({
+  blog_id: {
     type: String,
   },
   user_id: {
@@ -42,12 +49,5 @@ const BlogSchema = new mongoose.Schema({
     required: true,
   },
 });
-const ApproveSchema = mongoose.Schema({
-  user_id: {
-    type: String,
-    ref: "User",
-    required: true,
-  },
-});
-export const Approve = mongoose.model("Approve", ApproveSchema);
+export const Favorite = mongoose.model("Favorite", FavoriteSchema);
 export const Blog = mongoose.model("Blog", BlogSchema);

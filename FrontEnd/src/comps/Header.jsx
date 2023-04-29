@@ -6,27 +6,44 @@ import { useEffect, useState } from "react";
 const Header = () => {
   const [name, setName] = useState();
   const [age, setAge] = useState();
+  const [role, setRole] = useState();
   const [isName, setIsName] = useState(false);
+  const [favorites, setFavorites] = useState([]);
+
   const id = JSON.parse(localStorage.getItem("user_id"));
+
   const getUser = async () => {
     const res = await instance.get(`/users/${id}`);
-    console.log(res);
     setName(res.data.data.nickName);
     setAge(res.data.data.age);
+    setRole(res.data.data.role);
     setIsName(true);
   };
+
   const logOut = () => {
     window.localStorage.removeItem("user_id");
     window.location.replace("/Home");
   };
-  const AboutUs = () => {
-    window.location.replace(
-      "https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUJcmljayByb2xs"
-    );
+
+  const getFavorites = async () => {
+    const res = await instance.get(`/users/${id}`);
+
+    Promise.all(
+      res.data.data.Favorite.map(async (el) => {
+        const id = el.blog_id;
+        return await instance.get(`/blogs/${id}`);
+      })
+    )
+      .then((data) => {
+        setFavorites(data);
+      })
+      .catch((error) => console.error(error));
   };
+
   useEffect(() => {
     getUser();
-  });
+  }, []);
+
   return (
     <div className="headerContainer">
       <div className="headerTop">
@@ -45,10 +62,31 @@ const Header = () => {
                 {age}
               </div>
             </Button>
-            <Button onClick={logOut}>Log Out</Button>
-            <Button style={{ target: "blank" }} onClick={AboutUs}>
-              History
+            <Button
+              style={{
+                color: "white",
+                fontFamily: "Roboto Condensed, sans-serif",
+              }}
+              onClick={logOut}
+            >
+              Log Out
             </Button>
+            <Button
+              style={{
+                color: "Red",
+                fontFamily: "Roboto Condensed, sans-serif",
+              }}
+              onClick={getFavorites}
+            >
+              Favorites
+            </Button>
+
+            <div style={{ color: "red" }}>
+              {favorites &&
+                favorites.map((el) => {
+                  return el.data.data.parentCategory;
+                })}
+            </div>
           </>
         ) : (
           <Link
@@ -65,16 +103,22 @@ const Header = () => {
             </div>
           </Link>
         )}
-        <Link
-          to="/Create"
-          style={{
-            textDecoration: "none",
-            color: "white",
-            fontFamily: "Roboto Condensed, sans-serif",
-          }}
-        >
-          Create
-        </Link>
+        {role === "admin" ? (
+          <>
+            <Link
+              to="/Create"
+              style={{
+                color: "white",
+                fontFamily: "Roboto Condensed, sans-serif",
+                marginTop: "0.5vh",
+              }}
+            >
+              Create
+            </Link>
+          </>
+        ) : (
+          <></>
+        )}
       </div>
       <div className="headerLogoContainer">
         <Link

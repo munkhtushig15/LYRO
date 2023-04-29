@@ -3,8 +3,8 @@ import { adminCheck } from "../middleware/middleware.js";
 import {
   getAllBlogs,
   createBlog,
-  approveBlog,
   getBlogById,
+  addFavorite,
   addStars,
   getBlogByCategory,
   getBlogByParentCate,
@@ -18,7 +18,8 @@ blogRouter.post("/Pcate", getBlogByParentCate);
 blogRouter.post("/Ccate", getBlogByCategory);
 blogRouter.post("/Scate", getBlogBySecondCate);
 blogRouter.post("/createBlog", createBlog);
-blogRouter.post("/approveBlog", adminCheck, approveBlog);
+// blogRouter.post("/approveBlog", adminCheck, approveBlog);
+blogRouter.post("/favorite", addFavorite);
 blogRouter.post("/review/:id", addStars);
 
 export default blogRouter;

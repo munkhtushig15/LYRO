@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Header from "../../comps/Header";
 import { instance } from "../../App";
 const City = () => {
   const [data, setData] = useState();
@@ -15,9 +16,10 @@ const City = () => {
   };
   useEffect(() => {
     getData();
-  });
+  },[]);
   return (
     <div>
+      <Header />
       {data &&
         data.map((el) => {
           return (
