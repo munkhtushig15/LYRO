@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
+import Profile from "./pages/Profile/Profile";
 import Unsign from "./pages/Unsign/Unsign"
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
@@ -25,6 +26,7 @@ function App() {
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Create" element={<CreatePost />} />
           <Route path="/Search" element={<Search />} />
+          <Route path="/Profile" element={<Profile />}/>
         </Routes>
       </BrowserRouter>
     </div>
