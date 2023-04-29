@@ -20,10 +20,11 @@ const Header = () => {
   const [name, setName] = useState();
   const [age, setAge] = useState();
   const [isName, setIsName] = useState(false);
+  const [user, setUser] = useState();
   const id = JSON.parse(localStorage.getItem("user_id"));
   const getUser = async () => {
     const res = await instance.get(`/users/${id}`);
-    console.log(res);
+    setUser(res.data.data);
     setName(res.data.data.nickName);
     setAge(res.data.data.age);
     setIsName(true);
@@ -37,6 +38,7 @@ const Header = () => {
         <div className="headerTop">
           {isName ? (
             <Button
+              className="userName"
               onClick={getClick}
               style={{
                 color: "white",
@@ -119,10 +121,27 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {isClick ? <></> : (
+      {!isClick ? (
+        <></>
+      ) : (
         <div className="rightSideProfile">
-          <p>Hello Profile</p>
-          <button onClick={getClick}>X</button>
+          <div className="rightHeader">
+            <div className="rightProfile">
+              <img
+                className="profileIMG"
+                src={require("../images/UserIcon.png")}
+                alt=""
+              />
+              <span className="texts">{user.nickName}</span>
+            </div>
+            <div className="xButton" onClick={getClick}>
+              <i class="gg-close-o"></i>
+            </div>
+            <div className="threeGrid">
+              
+            </div>
+          </div>
+          {/*  */}
         </div>
       )}
     </>
