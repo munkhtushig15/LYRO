@@ -3,6 +3,14 @@ import "../Profile/Profile.css"
 import Footer from "../../comps/Footer"
 import { instance } from "../../App";
 export default function Profile() {
+    const Img = [
+        { img : "https://blog.joby.com/wp-content/uploads/2016/12/blog-header.jpg"},
+        { img : "https://www.colesclassroom.com/wp-content/uploads/2020/05/city-skyline-across-body-of-water-during-night-time-3586966.jpg"},
+        { img : "https://img.freepik.com/free-photo/chicago-downtown-aerial-panorama_649448-1094.jpg"},
+        { img : "https://www.lukas-petereit.com/wp-content/uploads/2017/10/Dubai-Sunset-UAE-Blue-Hour-City-Architecture-Skyline-Burj-Khalifa-Panorama-Street-Lights-Urban-Desert-Sky-Skyscraper-Travel-Photography-2.jpg"},
+        { img : "https://static-cse.canva.com/blob/560385/benjaminhung340384unsplash.jpg"},
+        { img : "https://thumbs.dreamstime.com/b/dubai-marina-beauty-view-rooftop-showing-cityscape-boats-sea-view-51444879.jpg"},
+    ]
     const [ name , setName] = useState()
     const id = JSON.parse(localStorage.getItem("id"))
          const getUser = async () => {
@@ -35,19 +43,11 @@ getUser()
                         <p>Followers: 69 <span>Following: 1124</span></p>
                     </div>
                     <div className="Blogs">
-                        <img className="BlogImg" src="https://blog.joby.com/wp-content/uploads/2016/12/blog-header.jpg" alt="" />
-                        <img className="BlogImg" src="https://www.colesclassroom.com/wp-content/uploads/2020/05/city-skyline-across-body-of-water-during-night-time-3586966.jpg" alt="" />
-                        <img className="BlogImg" src="https://img.freepik.com/free-photo/chicago-downtown-aerial-panorama_649448-1094.jpg" alt="" />
-                        <img className="BlogImg" src="https://www.lukas-petereit.com/wp-content/uploads/2017/10/Dubai-Sunset-UAE-Blue-Hour-City-Architecture-Skyline-Burj-Khalifa-Panorama-Street-Lights-Urban-Desert-Sky-Skyscraper-Travel-Photography-2.jpg" alt="" />
-                        <img className="BlogImg" src="https://static-cse.canva.com/blob/560385/benjaminhung340384unsplash.jpg" alt="" />
-                        <img className="BlogImg" src="https://thumbs.dreamstime.com/b/dubai-marina-beauty-view-rooftop-showing-cityscape-boats-sea-view-51444879.jpg" alt="" />
-                        <img className="BlogImg" src="https://thumbs.dreamstime.com/b/dubai-marina-beauty-view-rooftop-showing-cityscape-boats-sea-view-51444879.jpg" alt="" />
-                        <img className="BlogImg" src="https://thumbs.dreamstime.com/b/dubai-marina-beauty-view-rooftop-showing-cityscape-boats-sea-view-51444879.jpg" alt="" />
-                        <img className="BlogImg" src="https://thumbs.dreamstime.com/b/dubai-marina-beauty-view-rooftop-showing-cityscape-boats-sea-view-51444879.jpg" alt="" />
-                        <img className="BlogImg" src="https://thumbs.dreamstime.com/b/dubai-marina-beauty-view-rooftop-showing-cityscape-boats-sea-view-51444879.jpg" alt="" />
-                        <img className="BlogImg" src="https://thumbs.dreamstime.com/b/dubai-marina-beauty-view-rooftop-showing-cityscape-boats-sea-view-51444879.jpg" alt="" />
-                        <img className="BlogImg" src="https://thumbs.dreamstime.com/b/dubai-marina-beauty-view-rooftop-showing-cityscape-boats-sea-view-51444879.jpg" alt="" />
-                        <img className="BlogImg" src="https://thumbs.dreamstime.com/b/dubai-marina-beauty-view-rooftop-showing-cityscape-boats-sea-view-51444879.jpg" alt="" />
+                        {Img.map((el , i) => {
+                            return (<div>
+                                <img className="BlogImg" src={el.img}/>
+                            </div>)
+                        })}
                     </div>
                 </div>
             </div>
