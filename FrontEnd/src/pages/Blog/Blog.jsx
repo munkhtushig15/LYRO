@@ -20,6 +20,7 @@ const Blog = () => {
     setRate(Number(res.data.data.stars) / Number(res.data.data.user));
     setUserData(res2.data.data);
     setData(res.data.data);
+    console.log(res2)
   };
   const Rate = async (id) => {
     const res = await instance.get(`/blogs/${id}`);
@@ -44,7 +45,11 @@ const Blog = () => {
           <img className="imageBlogPage" src={data?.image} alt="" />
         </div>
         <div className="blogPageTwo">
-          
+          <h2>{data?.title}</h2>
+          <div>
+            <span>Bloger: </span>
+            <span>{userData&&userData.nickName}</span>
+          </div>
         </div>
         <div className="blogPageThree"></div>
         {/* <input ref={rateRef} />

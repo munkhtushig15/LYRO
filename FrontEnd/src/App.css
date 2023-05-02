@@ -249,7 +249,7 @@
 /* rightSide styleS */
 .rightSideProfile {
   position: fixed;
-  width: 30vw;
+  width: 20vw;
   height: 100vh;
   background-color: #fff;
   right: 0;
@@ -292,12 +292,12 @@
     width: 0;
   }
   to {
-    width: 30vw;
+    width: 20vw;
   }
 }
 @keyframes backTo {
   from {
-    width: 30vw;
+    width: 20vw;
   }
   to {
     width: 0;
