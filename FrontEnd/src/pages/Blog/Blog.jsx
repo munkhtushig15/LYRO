@@ -1,9 +1,11 @@
 import { useEffect, useState, useRef } from "react";
-
 import { useParams } from "react-router-dom";
 import { instance } from "../../App";
 import { Button } from "@mui/material";
 import Header from "../../comps/Header";
+import Footer from "../../comps/Footer";
+import "./Blog.css";
+
 const Blog = () => {
   const [data, setData] = useState();
   const [userData, setUserData] = useState();
@@ -35,10 +37,17 @@ const Blog = () => {
     return <div>Unshij baina</div>;
   }
   return (
-    <div>
+    <div className="center">
       <Header />
-      <div>
-        <input ref={rateRef} />
+      <div className="blogPage">
+        <div className="blogPageOne">
+          <img className="imageBlogPage" src={data?.image} alt="" />
+        </div>
+        <div className="blogPageTwo">
+          
+        </div>
+        <div className="blogPageThree"></div>
+        {/* <input ref={rateRef} />
         <Button onClick={() => Rate(data._id)}>Rate here</Button>
         <p> Rate : {rate}</p>
         <p> Hiisen hunii email : {userData?.email}</p>
@@ -48,8 +57,9 @@ const Blog = () => {
         <p>Aimag : {data?.category}</p>
         <p>Gol us gazar shoroo : {data?.secondCategory}</p>
         <p> Status(kinda useless) : {data?.status}</p>
-        <img style={{ width: "20vw" }} src={data?.image} alt="" />
+        <img style={{ width: "20vw" }} src={data?.image} alt="" /> */}
       </div>
+      <Footer />
     </div>
   );
 };
