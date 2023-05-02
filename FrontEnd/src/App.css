@@ -235,14 +235,6 @@
   height: 25px;
   margin-right: 15px;
 }
-
-
-  justify-content: center;
-  font-family: "Roboto Condensed", sans-serif;
-  background-image: url("./images/headerPic.jpg");
-  padding: 5em 0;
-  background-size: cover;
-}
 .footerMiniContainer {
   width: 80vw;
   display: flex;

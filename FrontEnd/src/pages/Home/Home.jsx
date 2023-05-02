@@ -7,6 +7,7 @@ import BrazilC from "../../comps/16 countries/BrazilCont";
 import ChinaC from "../../comps/16 countries/ChinaCont";
 import Comments from "../../comps/Comments";
 
+
 const Home = () => {
   return (
     <div className="homeContainer">

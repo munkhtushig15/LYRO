@@ -29,14 +29,12 @@ const Header = () => {
 
   const [favorites, setFavorites] = useState([]);
 
-
   const id = JSON.parse(localStorage.getItem("user_id"));
 
   const getUser = async () => {
     const res = await instance.get(`/users/${id}`);
 
     setUser(res.data.data);
-
 
     setName(res.data.data.nickName);
     setAge(res.data.data.age);
@@ -76,11 +74,6 @@ const Header = () => {
             <Button
               className="userName"
               onClick={getClick}
-    <div className="headerContainer">
-      <div className="headerTop">
-        {isName ? (
-          <>
-            <Button
               style={{
                 color: "white",
                 fontFamily: "Roboto Condensed, sans-serif",
@@ -110,33 +103,6 @@ const Header = () => {
           )}
         </div>
         <div className="headerLogoContainer">
-            <Button
-              style={{
-                color: "white",
-                fontFamily: "Roboto Condensed, sans-serif",
-              }}
-              onClick={logOut}
-            >
-              Log Out
-            </Button>
-            <Button
-              style={{
-                color: "Red",
-                fontFamily: "Roboto Condensed, sans-serif",
-              }}
-              onClick={getFavorites}
-            >
-              Favorites
-            </Button>
-
-            <div style={{ color: "red" }}>
-              {favorites &&
-                favorites.map((el) => {
-                  return el.data.data.parentCategory;
-                })}
-            </div>
-          </>
-        ) : (
           <Link
             to="/Home"
             style={{
@@ -188,23 +154,6 @@ const Header = () => {
             <span>Land</span>
           </div>
         </div>
-        )}
-        {role === "admin" ? (
-          <>
-            <Link
-              to="/Create"
-              style={{
-                color: "white",
-                fontFamily: "Roboto Condensed, sans-serif",
-                marginTop: "0.5vh",
-              }}
-            >
-              Create
-            </Link>
-          </>
-        ) : (
-          <></>
-        )}
       </div>
       {!isClick ? (
         <div className="rightSideProfileZero">
@@ -238,32 +187,6 @@ const Header = () => {
               title="Favourite"
             />
           </div>
-        </Link>
-        <div className="searchLine">
-          <Link to={"/Search"} className="searchLine">
-            <input type="text" placeholder="Search ..." />
-            <button className="searchButton">
-              <i className="gg-search searchButton"></i>
-            </button>
-          </Link>
-        </div>
-      </div>
-      <div className="cateContainer">
-        <Link to="/Mountian" className="cateType">
-          <i className="gg-arrow-down-o"></i>
-          <span>Mountain</span>
-        </Link>
-        <div className="cateType">
-          <i className="gg-arrow-down-o"></i>
-          <span>Beach</span>
-        </div>
-        <Link to="/City" className="cateType">
-          <i className="gg-arrow-down-o"></i>
-          <span>City</span>
-        </Link>
-        <div className="cateType">
-          <i className="gg-arrow-down-o"></i>
-          <span>Forest</span>
         </div>
       ) : (
         <div className="rightSideProfile">
