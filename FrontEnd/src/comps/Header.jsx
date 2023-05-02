@@ -221,9 +221,11 @@ const Header = () => {
  
             </div>
           </div>
+
           <div className="logout" onClick={logOut}>
             Logout
           </div>
+
         </div>
       )}
     </>

@@ -1,0 +1,16 @@
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blogPage {
+    padding: 3em 0;
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2em;
+}
+.imageBlogPage {
+    width: 100%;
+}
