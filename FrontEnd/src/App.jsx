@@ -8,6 +8,7 @@ import CreatePost from "./pages/CreatePost/Create";
 import Search from "./pages/Search/Search";
 import Blog from "./pages/Blog/Blog";
 import Mountian from "./pages/Blog/Mountian";
+import Favorite from "./pages/Favorites/Favorite";
 import City from "./pages/Blog/City";
 import axios from "axios";
 export const instance = axios.create({
@@ -30,6 +31,7 @@ function App() {
           <Route path="/Search" element={<Search />} />
           <Route path="/blogs/:id" element={<Blog />} />
           <Route path="/Mountian" element={<Mountian />} />
+          <Route path="/Favorites" element={<Favorite />} />
           <Route path="/City" element={<City />} />
         </Routes>
       </BrowserRouter>
