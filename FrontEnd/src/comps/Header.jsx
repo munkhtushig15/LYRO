@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { instance } from "../App";
 import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
+
+import ProfileMini from "./ProfileMini";
+
 const Header = () => {
   // <><><><><><><><> right side style <><><><><><><><>
   const [isClick, setIsClick] = useState(false);
@@ -122,9 +125,7 @@ const Header = () => {
         </div>
       </div>
       {!isClick ? (
-        <></>
-      ) : (
-        <div className="rightSideProfile">
+        <div className="rightSideProfileZero">
           <div className="rightHeader">
             <div className="rightProfile">
               <img
@@ -132,16 +133,66 @@ const Header = () => {
                 src={require("../images/UserIcon.png")}
                 alt=""
               />
-              <span className="texts">{user.nickName}</span>
             </div>
             <div className="xButton" onClick={getClick}>
-              <i class="gg-close-o"></i>
-            </div>
-            <div className="threeGrid">
-              
+              <i className="gg-close-o"></i>
             </div>
           </div>
-          {/*  */}
+          <div className="threeGrid">
+            <ProfileMini
+              image={<i className="gg-notes iconsMiniPro"></i>}
+              title="Blogs"
+            />
+            <ProfileMini
+              image={<i className="gg-eye iconsMiniPro"></i>}
+              title="Views"
+            />
+            <ProfileMini
+              image={<i className="gg-profile iconsMiniPro"></i>}
+              title="Profile"
+            />
+            <ProfileMini
+              image={<i className="gg-heart iconsMiniPro"></i>}
+              title="Favourite"
+            />
+          </div>
+        </div>
+      ) : (
+        <div className="rightSideProfile">
+          <div className="top">
+            <div className="rightHeader">
+              <div className="rightProfile">
+                <img
+                  className="profileIMG"
+                  src={require("../images/UserIcon.png")}
+                  alt=""
+                />
+                <span className="texts">{user.nickName}</span>
+              </div>
+              <div className="xButton" onClick={getClick}>
+                <i className="gg-close-o"></i>
+              </div>
+            </div>
+            <div className="threeGrid">
+              <ProfileMini
+                image={<i className="gg-notes iconsMiniPro"></i>}
+                title="Blogs"
+              />
+              <ProfileMini
+                image={<i className="gg-eye iconsMiniPro"></i>}
+                title="Views"
+              />
+              <ProfileMini
+                image={<i className="gg-profile iconsMiniPro"></i>}
+                title="Profile"
+              />
+              <ProfileMini
+                image={<i className="gg-heart iconsMiniPro"></i>}
+                title="Favourite"
+              />
+            </div>
+          </div>
+          <div className="logout">Logout</div>
         </div>
       )}
     </>
