@@ -7,9 +7,7 @@ import { useEffect, useState } from "react";
 import ProfileMini from "./ProfileMini";
 
 const Header = () => {
-  // <><><><><><><><> right side style <><><><><><><><>
   const [isClick, setIsClick] = useState(false);
-
   const getClick = () => {
     if (isClick === false) {
       setIsClick(true);
@@ -18,24 +16,16 @@ const Header = () => {
     }
   };
 
-  //<><><><><><><><><><><><><><><><><><><><><><><><><><>
-
   const [name, setName] = useState();
   const [age, setAge] = useState();
   const [role, setRole] = useState();
   const [isName, setIsName] = useState(false);
-
   const [user, setUser] = useState();
-
   const [favorites, setFavorites] = useState([]);
-
   const id = JSON.parse(localStorage.getItem("user_id"));
-
   const getUser = async () => {
     const res = await instance.get(`/users/${id}`);
-
     setUser(res.data.data);
-
     setName(res.data.data.nickName);
     setAge(res.data.data.age);
     setRole(res.data.data.role);
@@ -49,17 +39,23 @@ const Header = () => {
 
   const getFavorites = async () => {
     const res = await instance.get(`/users/${id}`);
-
-    Promise.all(
-      res.data.data.Favorite.map(async (el) => {
-        const id = el.blog_id;
-        return await instance.get(`/blogs/${id}`);
+    console.log(res);
+    setFavorites(
+      res.data.data2.map((el) => {
+        return el;
       })
-    )
-      .then((data) => {
-        setFavorites(data);
-      })
-      .catch((error) => console.error(error));
+    );
+    // Promise.all(
+    //   res.data.data.Favorite.map(async (el) => {
+    //     const id = el.blog_id;
+    //     return await instance.get(`/blogs/${id}`);
+    //   })
+    // )
+    //   .then((data) => {
+    //     console.log(data.data.data);
+    //     setFavorites(data);
+    //   })
+    //   .catch((error) => console.error(error));
   };
 
   useEffect(() => {
@@ -217,13 +213,17 @@ const Header = () => {
                 image={<i className="gg-profile iconsMiniPro"></i>}
                 title="Profile"
               />
+              <Link to="/Favorites">
               <ProfileMini
                 image={<i className="gg-heart iconsMiniPro"></i>}
                 title="Favourite"
-              />
+              /></Link>
+ 
             </div>
           </div>
-          <div className="logout">Logout</div>
+          <div className="logout" onClick={logOut}>
+            Logout
+          </div>
         </div>
       )}
     </>

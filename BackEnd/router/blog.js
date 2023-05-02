@@ -6,6 +6,7 @@ import {
   getBlogById,
   addFavorite,
   addStars,
+  addComment,
   getBlogByCategory,
   getBlogByParentCate,
   getBlogBySecondCate,
@@ -18,7 +19,7 @@ blogRouter.post("/Pcate", getBlogByParentCate);
 blogRouter.post("/Ccate", getBlogByCategory);
 blogRouter.post("/Scate", getBlogBySecondCate);
 blogRouter.post("/createBlog", createBlog);
-// blogRouter.post("/approveBlog", adminCheck, approveBlog);
+blogRouter.post("/addComment", addComment);
 blogRouter.post("/favorite", addFavorite);
 blogRouter.post("/review/:id", addStars);
 

@@ -1,10 +1,14 @@
 import { Blog } from "../model/Blog.js";
 import { Favorite } from "../model/Blog.js";
+import { Comment } from "../model/Comment.js";
 export const getAllBlogs = async (req, res) => {
   try {
     const Skip = req.query.skip;
     const Limit = req.query.limit;
-    const blog = await Blog.find({}).limit(Limit).skip(Skip);
+    const blog = await Blog.find({})
+      .limit(Limit)
+      .skip(Skip)
+      .populate("Comment");
     res.status(200).send({
       data: blog,
       message: "Nice",
@@ -18,10 +22,9 @@ export const getAllBlogs = async (req, res) => {
 export const getBlogById = async (req, res) => {
   try {
     const { id } = req.params;
-    const blog = await Blog.findById({ _id: id });
+    const blog = await Blog.findById({ _id: id }).populate("Comment");
     res.status(200).send({
       data: blog,
-      message: "Nice",
     });
   } catch (error) {
     res.status(400).send({
@@ -74,27 +77,18 @@ export const addFavorite = async (req, res) => {
     });
   }
 };
-// export const approveBlog = async (req, res) => {
-//   try {
-//     const { _id, blog_id } = req.body;
-//     const approve = await Approve.findById({ _id: _id });
-//     await Blog.findByIdAndUpdate(
-//       { _id: blog_id },
-//       {
-//         status: "Public",
-//       }
-//     );
-//     await Approve.findByIdAndDelete({ _id: _id });
-//     res.status(200).send({
-//       data: approve,
-//       message: "Approved",
-//     });
-//   } catch (error) {
-//     res.status(400).send({
-//       message: error.message,
-//     });
-//   }
-// };
+export const addComment = async (req, res) => {
+  try {
+    const comment = await Comment.create(req.body);
+    res.status(200).send({
+      data: comment,
+    });
+  } catch (error) {
+    res.status(400).send({
+      data: error.message,
+    });
+  }
+};
 export const getBlogByParentCate = async (req, res) => {
   try {
     const { parentCategory } = req.body;
