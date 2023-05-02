@@ -1,14 +1,16 @@
-import { instance } from "../App";
+import { instance } from "../../App";
 import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
-import "../App.css";
+import "../../App.css";
 
-const Blog = () => {
+const China = () => {
   const [data, setData] = useState([]);
 
   const getBlogs = async () => {
     try {
-      const res = await instance.get("/blogs");
+      const res = await instance.post("/blogs/Pcate/?limit=4", {
+        parentCategory: "China",
+      });
       console.log(res);
       setData(
         res.data.data.map((el) => {
@@ -35,11 +37,11 @@ const Blog = () => {
   return (
     <div className="blogContainer">
       {data &&
-        data.map((el, i) => {
+        data.map((el, u) => {
           return (
-            <div>
+            <div key={u}>
               <Button onClick={() => getBlogById(el._id)}>
-                <div className="blogStyle" key={i}>
+                <div className="blogStyle">
                   <img className="blogImage" src={el.image} alt="goy" />
                   <span>{el.title}</span>
                   <span>{el.secondCategory}</span>
@@ -51,4 +53,4 @@ const Blog = () => {
     </div>
   );
 };
-export default Blog;
+export default China;

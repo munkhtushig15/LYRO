@@ -1,5 +1,5 @@
 import { Blog } from "../model/Blog.js";
-import { Approve } from "../model/Blog.js";
+import { Favorite } from "../model/Blog.js";
 export const getAllBlogs = async (req, res) => {
   try {
     const Skip = req.query.skip;
@@ -32,7 +32,6 @@ export const getBlogById = async (req, res) => {
 export const createBlog = async (req, res) => {
   try {
     const blog = await Blog.create(req.body);
-    await Approve.create(req.body);
     res.status(200).send({
       data: blog,
     });
@@ -63,27 +62,39 @@ export const addStars = async (req, res) => {
     });
   }
 };
-export const approveBlog = async (req, res) => {
+export const addFavorite = async (req, res) => {
   try {
-    const { _id, blog_id } = req.body;
-    const approve = await Approve.findById({ _id: _id });
-    await Blog.findByIdAndUpdate(
-      { _id: blog_id },
-      {
-        status: "Public",
-      }
-    );
-    await Approve.findByIdAndDelete({ _id: _id });
+    const blog = await Favorite.create(req.body);
     res.status(200).send({
-      data: approve,
-      message: "Approved",
+      data: blog,
     });
   } catch (error) {
     res.status(400).send({
-      message: error.message,
+      data: error.message,
     });
   }
 };
+// export const approveBlog = async (req, res) => {
+//   try {
+//     const { _id, blog_id } = req.body;
+//     const approve = await Approve.findById({ _id: _id });
+//     await Blog.findByIdAndUpdate(
+//       { _id: blog_id },
+//       {
+//         status: "Public",
+//       }
+//     );
+//     await Approve.findByIdAndDelete({ _id: _id });
+//     res.status(200).send({
+//       data: approve,
+//       message: "Approved",
+//     });
+//   } catch (error) {
+//     res.status(400).send({
+//       message: error.message,
+//     });
+//   }
+// };
 export const getBlogByParentCate = async (req, res) => {
   try {
     const { parentCategory } = req.body;
@@ -103,7 +114,6 @@ export const getBlogByCategory = async (req, res) => {
   try {
     const { parentCategory, category } = req.body;
     const blog = await Blog.find({
-      parentCategory: parentCategory,
       category: category,
     });
     res.status(200).send({
@@ -119,9 +129,7 @@ export const getBlogBySecondCate = async (req, res) => {
   try {
     const { parentCategory, secondCategory, category } = req.body;
     const blog = await Blog.find({
-      parentCategory: parentCategory,
       secondCategory: secondCategory,
-      category: category,
     });
     res.status(200).send({
       data: blog,

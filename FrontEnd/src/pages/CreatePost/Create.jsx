@@ -1,8 +1,10 @@
 import { instance } from "../../App";
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import MenuItem from "@mui/material/MenuItem";
 import "react-toastify/dist/ReactToastify.css";
 const CreatePost = () => {
   const titleRef = useRef();
@@ -24,6 +26,28 @@ const CreatePost = () => {
     toast.success("Created");
     console.log(res);
   };
+  const secondCategoryOptions = [
+    {
+      value: "Mountain",
+      label: "Mountain",
+    },
+    {
+      value: "City",
+      label: "City",
+    },
+    {
+      value: "Beach",
+      label: "Beach",
+    },
+    {
+      value: "Forest",
+      label: "Forest",
+    },
+    {
+      value: "Land",
+      label: "Land",
+    },
+  ];
   return (
     <div>
       <ToastContainer />
@@ -33,12 +57,22 @@ const CreatePost = () => {
       <TextField inputRef={parentCategoryRef} label="Country"></TextField>
       <TextField inputRef={categoryRef} label="Aimag"></TextField>
       <TextField
+        select
         inputRef={secondCategoryRef}
-        label="Gol Us Gazar Shoroo"
-      ></TextField>
+        id="outlined-basic2"
+        label="Gol us gazar shoroo"
+        variant="standard"
+      >
+        {secondCategoryOptions.map((option) => (
+          <MenuItem key={option.value} value={option.value}>
+            {option.label}
+          </MenuItem>
+        ))}
+      </TextField>
       <Button onClick={Create} style={{ width: "150px", height: "57px" }}>
         Create
       </Button>
+      <Link to="/Home">To Home</Link>
     </div>
   );
 };

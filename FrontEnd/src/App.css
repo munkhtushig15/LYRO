@@ -131,6 +131,8 @@
   display: flex;
   gap: 5px;
   transition: 0.3s;
+  text-decoration: none;
+  color: black;
 }
 .cateType:hover {
   background-image: url("./images/headerPic.jpg");
@@ -187,12 +189,13 @@
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 2em;
+  gap: 1em;
 }
 .blogStyle {
-  width: 90%;
-  height: 90%;
+  width: 100% !important;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 .blogStyle span {
@@ -200,14 +203,40 @@
 }
 .blogImage {
   width: 100%;
-  height: 82%;
+  border-radius: 2px;
+}
+.blogsBigContainer {
+  width: 100% !important;
+  display:block !important; 
+}
+.tryIt {
+  width: 100%;
 }
 
-/* Footer styles */
 
-.FooterContainer {
+
+
+
+
+
+.FooterContainer{
   width: 100vw;
   display: flex;
+
+  background-color: black;
+  color: white;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.FooterLogo {
+  width: 25px;
+  height: 25px;
+  margin-right: 15px;
+}
+
+
   justify-content: center;
   font-family: "Roboto Condensed", sans-serif;
   background-image: url("./images/headerPic.jpg");
@@ -245,6 +274,7 @@
   display: flex;
   justify-content: center;
 }
+
 
 /* rightSide styleS */
 .rightSideProfile {
@@ -399,3 +429,5 @@
   background-color: #ffffff59;
   cursor: pointer;
 }
+
+
