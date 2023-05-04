@@ -166,22 +166,30 @@ const Header = () => {
             </div>
           </div>
           <div className="threeGrid">
-            <ProfileMini
-              image={<i className="gg-notes iconsMiniPro"></i>}
-              title="Blogs"
-            />
-            <ProfileMini
-              image={<i className="gg-eye iconsMiniPro"></i>}
-              title="Views"
-            />
-            <ProfileMini
-              image={<i className="gg-profile iconsMiniPro"></i>}
-              title="Profile"
-            />
-            <ProfileMini
-              image={<i className="gg-heart iconsMiniPro"></i>}
-              title="Favourite"
-            />
+          <Link to="/Favorites" className="profileMiniContainer">
+                <ProfileMini
+                  image={<i className="gg-notes iconsMiniPro"></i>}
+                  title="Blogs"
+                />
+              </Link>
+              <Link to="/Create" className="profileMiniContainer">
+                <ProfileMini
+                  image={<i className="gg-eye iconsMiniPro"></i>}
+                  title="Views"
+                />
+              </Link>
+              <Link to="/Profile" className="profileMiniContainer">
+                <ProfileMini
+                  image={<i className="gg-profile iconsMiniPro"></i>}
+                  title="Profile"
+                />
+              </Link>
+              <Link to="/Favorites" className="profileMiniContainer">
+                <ProfileMini
+                  image={<i className="gg-heart iconsMiniPro"></i>}
+                  title="Favourite"
+                />
+              </Link>
           </div>
         </div>
       ) : (
@@ -201,31 +209,36 @@ const Header = () => {
               </div>
             </div>
             <div className="threeGrid">
-              <ProfileMini
-                image={<i className="gg-notes iconsMiniPro"></i>}
-                title="Blogs"
-              />
-              <ProfileMini
-                image={<i className="gg-eye iconsMiniPro"></i>}
-                title="Views"
-              />
-              <ProfileMini
-                image={<i className="gg-profile iconsMiniPro"></i>}
-                title="Profile"
-              />
-              <Link to="/Favorites">
-              <ProfileMini
-                image={<i className="gg-heart iconsMiniPro"></i>}
-                title="Favourite"
-              /></Link>
- 
+              <Link to="/Favorites" className="profileMiniContainer">
+                <ProfileMini
+                  image={<i className="gg-notes iconsMiniPro"></i>}
+                  title="Blogs"
+                />
+              </Link>
+              <Link to="/Create" className="profileMiniContainer">
+                <ProfileMini
+                  image={<i className="gg-eye iconsMiniPro"></i>}
+                  title="Add Blog"
+                />
+              </Link>
+              <Link to="/Profile" className="profileMiniContainer">
+                <ProfileMini
+                  image={<i className="gg-profile iconsMiniPro"></i>}
+                  title="Profile"
+                />
+              </Link>
+              <Link to="/Favorites" className="profileMiniContainer">
+                <ProfileMini
+                  image={<i className="gg-heart iconsMiniPro"></i>}
+                  title="Favourite"
+                />
+              </Link>
             </div>
           </div>
 
           <div className="logout" onClick={logOut}>
             Logout
           </div>
-
         </div>
       )}
     </>

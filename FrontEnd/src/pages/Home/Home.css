@@ -62,6 +62,7 @@ main {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 2em;
   gap: 1em;
 }
