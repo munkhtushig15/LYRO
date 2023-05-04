@@ -36,12 +36,11 @@ const Blog = () => {
   };
   const addComment = async (id) => {
     const user_id = JSON.parse(localStorage.getItem("user_id"));
-    const res = await instance.post(`/blogs/addcomment`, {
+    await instance.post(`/blogs/addcomment`, {
       Comment: commentRef.current.value,
       blog_id: id,
       user_id: user_id,
     });
-    console.log(res);
   };
 
   const getComment = async () => {

@@ -208,24 +208,31 @@ const Header = () => {
               <ProfileMini
                 image={<i className="gg-eye iconsMiniPro"></i>}
                 title="Views"
-              />
-              <ProfileMini
-                image={<i className="gg-profile iconsMiniPro"></i>}
-                title="Profile"
-              />
+              />{" "}
+              <Link to="/Profile">
+                <ProfileMini
+                  image={<i className="gg-profile iconsMiniPro"></i>}
+                  title="Profile"
+                />
+              </Link>
               <Link to="/Favorites">
-              <ProfileMini
-                image={<i className="gg-heart iconsMiniPro"></i>}
-                title="Favourite"
-              /></Link>
- 
+                <ProfileMini
+                  image={<i className="gg-heart iconsMiniPro"></i>}
+                  title="Favourite"
+                />
+              </Link>
+              <Link to="/Create">
+                <ProfileMini
+                  image={<i className="gg-heart iconsMiniPro"></i>}
+                  title="Create"
+                />
+              </Link>
             </div>
           </div>
 
           <div className="logout" onClick={logOut}>
             Logout
           </div>
-
         </div>
       )}
     </>
