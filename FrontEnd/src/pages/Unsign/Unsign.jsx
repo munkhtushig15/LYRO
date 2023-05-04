@@ -46,6 +46,26 @@ const Unsign = () => {
           </div>
         </div>
       </div>
+      <div className="goycontainer">
+        <div className="hi">
+          <div className="ug">
+            <h1 className="ene">ene site yund hertegtei be?</h1>
+          </div>
+          <div className="ug">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, rem!
+          </div>
+        </div>
+      </div>
+      <div className="goycontainer">
+        <div className="hi">
+          <div className="ug">
+            <h1 className="ene">ene site yund hertegtei be?</h1>
+          </div>
+          <div className="ug">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, rem!
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

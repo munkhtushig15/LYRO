@@ -1,14 +1,17 @@
 import React from "react";
-import "../App.css"
+import "../App.css";
 
 export default function Footer() {
-    return(
-    <>
-        <div className="FooterContainer">            
-                <p>Privacy Policy  || Terms of Use</p>                
-                <p><img src="logo.png" className="FooterLogo" alt="" />Developed by Pinecone</p>                
-                <p>© 2023 Lyro.com, Inc</p>
+  return (
+    <div className="FooterContainer">
+      <div className="footerMiniContainer">
+        <p className="footerTextsMini">Privacy Policy || Terms of Use</p>
+        <div className="footerLogo">
+          <img src="logo.png" className="logoSize" alt="" />
+          <span className="footerTexts">LYRO</span>
         </div>
-    </>
-    )
+        <p className="footerTextsMini">© 2023 Lyro.com, Inc</p>
+      </div>
+    </div>
+  );
 }

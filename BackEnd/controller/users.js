@@ -1,5 +1,6 @@
 import { User } from "../model/User.js";
-
+import { Favorite } from "../model/Blog.js";
+import { Blog } from "../model/Blog.js";
 import jwt from "jsonwebtoken";
 export const getAllUser = async (req, res) => {
   try {
@@ -70,9 +71,15 @@ export const getUserByObject = async (req, res) => {
 export const getUserById = async (req, res) => {
   try {
     const { id } = req.params;
-    const user = await User.findById(id).populate("Approve").populate("Blog");
+    const user = await User.findById(id).populate("Blog").populate("Favorite");
+    const favo = user.Favorite.map((el) => {
+      return el.blog_id;
+    });
+    const test = await Blog.find({ _id: { $in: favo } });
+    // await Favorite.findById({ user_id: id });
     res.status(200).send({
       data: user,
+      data2: test,
     });
   } catch (error) {
     res.status(404).send({

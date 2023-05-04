@@ -1,10 +1,14 @@
 import { Blog } from "../model/Blog.js";
-import { Approve } from "../model/Blog.js";
+import { Favorite } from "../model/Blog.js";
+import { Comment } from "../model/Comment.js";
 export const getAllBlogs = async (req, res) => {
   try {
     const Skip = req.query.skip;
     const Limit = req.query.limit;
-    const blog = await Blog.find({}).limit(Limit).skip(Skip);
+    const blog = await Blog.find({})
+      .limit(Limit)
+      .skip(Skip)
+      .populate("Comment");
     res.status(200).send({
       data: blog,
       message: "Nice",
@@ -15,11 +19,22 @@ export const getAllBlogs = async (req, res) => {
     });
   }
 };
-
+export const getBlogById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const blog = await Blog.findById({ _id: id }).populate("Comment");
+    res.status(200).send({
+      data: blog,
+    });
+  } catch (error) {
+    res.status(400).send({
+      data: error.message,
+    });
+  }
+};
 export const createBlog = async (req, res) => {
   try {
     const blog = await Blog.create(req.body);
-    await Approve.create(req.body);
     res.status(200).send({
       data: blog,
     });
@@ -50,28 +65,31 @@ export const addStars = async (req, res) => {
     });
   }
 };
-export const approveBlog = async (req, res) => {
+export const addFavorite = async (req, res) => {
   try {
-    const { _id, blog_id } = req.body;
-    const approve = await Approve.findById({ _id: _id });
-    await Blog.findByIdAndUpdate(
-      { _id: blog_id },
-      {
-        status: "Public",
-      }
-    );
-    await Approve.findByIdAndDelete({ _id: _id });
+    const blog = await Favorite.create(req.body);
     res.status(200).send({
-      data: approve,
-      message: "Approved",
+      data: blog,
     });
   } catch (error) {
     res.status(400).send({
-      message: error.message,
+      data: error.message,
     });
   }
 };
-export const getBlogByCategory = async (req, res) => {
+export const addComment = async (req, res) => {
+  try {
+    const comment = await Comment.create(req.body);
+    res.status(200).send({
+      data: comment,
+    });
+  } catch (error) {
+    res.status(400).send({
+      data: error.message,
+    });
+  }
+};
+export const getBlogByParentCate = async (req, res) => {
   try {
     const { parentCategory } = req.body;
     const blog = await Blog.find({
@@ -86,12 +104,11 @@ export const getBlogByCategory = async (req, res) => {
     });
   }
 };
-export const getBlogByCategory2 = async (req, res) => {
+export const getBlogByCategory = async (req, res) => {
   try {
-    const { parentCategory, secondCategory } = req.body;
+    const { parentCategory, category } = req.body;
     const blog = await Blog.find({
-      parentCategory: parentCategory,
-      secondCategory: secondCategory,
+      category: category,
     });
     res.status(200).send({
       data: blog,
@@ -102,13 +119,11 @@ export const getBlogByCategory2 = async (req, res) => {
     });
   }
 };
-export const getBlogByCategory3 = async (req, res) => {
+export const getBlogBySecondCate = async (req, res) => {
   try {
     const { parentCategory, secondCategory, category } = req.body;
     const blog = await Blog.find({
-      parentCategory: parentCategory,
       secondCategory: secondCategory,
-      category: category,
     });
     res.status(200).send({
       data: blog,

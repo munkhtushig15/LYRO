@@ -38,13 +38,14 @@ export const UserSchema = new mongoose.Schema(
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
+
 UserSchema.virtual("Blog", {
   ref: "Blog",
   localField: "_id",
   foreignField: "user_id",
 });
-UserSchema.virtual("Approve", {
-  ref: "Approve",
+UserSchema.virtual("Favorite", {
+  ref: "Favorite",
   localField: "_id",
   foreignField: "user_id",
 });
@@ -68,4 +69,5 @@ UserSchema.methods.jwtGenerate = async function () {
     expiresIn: "1d",
   });
 };
+
 export const User = mongoose.model("User", UserSchema);
