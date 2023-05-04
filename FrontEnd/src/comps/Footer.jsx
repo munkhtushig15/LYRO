@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="footerMiniContainer">
         <p className="footerTextsMini">Privacy Policy || Terms of Use</p>
         <div className="footerLogo">
-          <img src="logo.png" className="logoSize" alt="" />
+          <img src={require("../images/logo.png")} className="logoSize" alt="" />
           <span className="footerTexts">LYRO</span>
         </div>
         <p className="footerTextsMini">© 2023 Lyro.com, Inc</p>

@@ -119,6 +119,7 @@
   width: 100vw;
   padding: 0 10vw;
   display: flex;
+  justify-content: center;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   background-color: #fff;
@@ -249,7 +250,7 @@
 /* rightSide styleS */
 .rightSideProfile {
   position: fixed;
-  width: 30vw;
+  width: 20vw;
   height: 100vh;
   background-color: #fff;
   right: 0;
@@ -292,12 +293,12 @@
     width: 0;
   }
   to {
-    width: 30vw;
+    width: 20vw;
   }
 }
 @keyframes backTo {
   from {
-    width: 30vw;
+    width: 20vw;
   }
   to {
     width: 0;
