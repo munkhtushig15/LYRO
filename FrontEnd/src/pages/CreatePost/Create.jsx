@@ -27,6 +27,77 @@ const CreatePost = () => {
     console.log(res);
   };
   const secondCategoryOptions = [
+    { country: "Switzerland", title: "Switzerland" },
+    {
+      country: "Germany",
+      title: "Germany",
+    },
+    {
+      country: "Canada",
+      title: "Canada",
+    },
+    {
+      country: "UnitedStates",
+      title: "UnitedStates",
+    },
+    {
+      country: "Australia",
+      title: "Australia",
+    },
+    {
+      country: "Japan",
+      title: "Japan",
+    },
+    {
+      country: "UnitedKingdom",
+      title: "UnitedKingdom",
+    },
+    {
+      country: "France",
+      title: "France",
+    },
+    {
+      country: "Denmark",
+      title: "Denmark",
+    },
+    {
+      country: "NewZealand",
+      title: "NewZealand",
+    },
+    {
+      country: "TheNetherLands",
+      title: "TheNetherLands",
+    },
+    {
+      country: "Norway",
+      title: "Norway",
+    },
+    {
+      country: "Italy",
+      title: "Italy",
+    },
+    {
+      country: "Finland",
+      title: "Finland",
+    },
+    {
+      country: "Spain",
+      title: "Spain",
+    },
+    {
+      country: "China",
+      title: "China",
+    },
+    {
+      country: "Russia",
+      title: "Russia",
+    },
+    {
+      country: "Mongolia",
+      title: "Mongolia",
+    },
+  ];
+  const countryOptions = [
     {
       value: "Mountain",
       label: "Mountain",
@@ -54,7 +125,19 @@ const CreatePost = () => {
       <TextField inputRef={titleRef} label="Title"></TextField>
       <TextField inputRef={imageRef} label="Image"></TextField>
       <TextField inputRef={descRef} label="Description"></TextField>
-      <TextField inputRef={parentCategoryRef} label="Country"></TextField>
+      <TextField
+        select
+        inputRef={parentCategoryRef}
+        id="outlined-basic2"
+        label="Country"
+        variant="standard"
+      >
+        {secondCategoryOptions.map((option) => (
+          <MenuItem key={option.country} value={option.country}>
+            {option.title}
+          </MenuItem>
+        ))}
+      </TextField>
       <TextField inputRef={categoryRef} label="Aimag"></TextField>
       <TextField
         select
@@ -63,7 +146,7 @@ const CreatePost = () => {
         label="Gol us gazar shoroo"
         variant="standard"
       >
-        {secondCategoryOptions.map((option) => (
+        {countryOptions.map((option) => (
           <MenuItem key={option.value} value={option.value}>
             {option.label}
           </MenuItem>
