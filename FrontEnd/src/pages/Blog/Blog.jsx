@@ -2,6 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { instance } from "../../App";
 import Header from "../../comps/Header";
+import Footer from "../../comps/Footer";
+import "./Blog.css";
 const Blog = () => {
   const [blog, setBlog] = useState();
 
@@ -65,9 +67,8 @@ const Blog = () => {
     return <div>Unshij baina</div>;
   }
   return (
-    <div>
+    <div className="center">
       <Header />
-
       <div className="blogPage">
         <div className="blogPageOne">
           <img className="imageBlogPage" src={data?.image} alt="" />
@@ -118,13 +119,12 @@ const Blog = () => {
               src="https://images.unsplash.com/photo-1592977731761-2d58aafef572?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80"
               alt=""
             />
-            <span className="copyRight">© 2023 Lyro.com, Inc</span>
+            <span className="copyRight">Â© 2023 Lyro.com, Inc</span>
           </div>
         </div>
         <div className="containerPro">
           <div className="suggest">
             <p>Suggested</p>
-
           </div>
           <div className="ownBlogs">
             <p>{userData && userData.nickName} Blogs</p>
@@ -133,34 +133,8 @@ const Blog = () => {
             <p>History</p>
           </div>
         </div>
-
-      <div>
-        <div>
-          <Button onClick={() => addFavorites(data._id)}>
-            Add to favorites
-          </Button>
-        </div>
-        <input ref={rateRef} />
-        <Button onClick={() => Rate(data._id)}>Rate here</Button>
-        <div>
-          <input ref={commentRef} />
-          <Button onClick={() => addComment(data._id)}>Add comment</Button>
-          {comment &&
-            comment.map((el) => {
-              return <div>{el.Comment}</div>;
-            })}
-        </div>
-        <p> Rate : {rate}</p>
-        <p> Hiisen hunii email : {userData?.email}</p>
-        <p> Category : {data?.category}</p>
-        <p>Description : {data?.desc}</p>
-        <p>Uls : {data?.parentCategory}</p>
-        <p>Aimag : {data?.category}</p>
-        <p>Gol us gazar shoroo : {data?.secondCategory}</p>
-        <p> Status(kinda useless) : {data?.status}</p>
-        <img style={{ width: "20vw" }} src={data?.image} alt="" />
-
       </div>
+      <Footer />
     </div>
   );
 };
