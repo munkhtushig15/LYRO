@@ -1,7 +1,12 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import Unsign from "./pages/Unsign/Unsign";
+
+import Profile from "./pages/Profile/Profile";
+import Unsign from "./pages/Unsign/Unsign"
+
+
+
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 import CreatePost from "./pages/CreatePost/Create";
@@ -29,10 +34,14 @@ function App() {
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Create" element={<CreatePost />} />
           <Route path="/Search" element={<Search />} />
+
+          <Route path="/Profile" element={<Profile />}/>
+
           <Route path="/blogs/:id" element={<Blog />} />
           <Route path="/Mountian" element={<Mountian />} />
           <Route path="/Favorites" element={<Favorite />} />
           <Route path="/City" element={<City />} />
+
         </Routes>
       </BrowserRouter>
     </div>
