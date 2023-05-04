@@ -1,7 +1,7 @@
 import "../App.css";
 
 const Comments = () => {
-  return <div className="commentsContainer">a</div>;
+  return <div className="commentsContainer"></div>;
 };
 
 export default Comments;

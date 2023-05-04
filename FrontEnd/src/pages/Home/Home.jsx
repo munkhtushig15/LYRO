@@ -2,11 +2,8 @@ import "./Home.css";
 import Header from "../../comps/Header";
 import Footer from "../../comps/Footer";
 import BigAds from "../../comps/BigAds";
-import MongoliaC from "../../comps/16 countries/MongoliaCont";
-import BrazilC from "../../comps/16 countries/BrazilCont";
-import ChinaC from "../../comps/16 countries/ChinaCont";
+import CountryC from "../../comps/16 countries/ACountryC";
 import Comments from "../../comps/Comments";
-
 
 const Home = () => {
   return (
@@ -17,9 +14,7 @@ const Home = () => {
         <div className="contents">
           <p className="title">LATEST ISSUE</p>
           <div className="gridBigBlog">
-            <MongoliaC />
-            <BrazilC />
-            <ChinaC />
+            <CountryC />
           </div>
         </div>
         <Comments />

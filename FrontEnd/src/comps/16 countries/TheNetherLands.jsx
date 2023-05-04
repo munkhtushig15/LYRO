@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 import "../../App.css";
 
-const Brazil = () => {
+const TheNetherLands = () => {
   const [data, setData] = useState([]);
 
   const getBlogs = async () => {
     try {
       const res = await instance.post("/blogs/Pcate/?limit=4", {
-        parentCategory: "Brazil",
+        parentCategory: "TheNetherLands",
       });
       console.log(res);
       setData(
@@ -37,10 +37,10 @@ const Brazil = () => {
   return (
     <div className="blogContainer">
       {data &&
-        data.map((el, i) => {
+        data.map((el, u) => {
           return (
-            <div className="tryIt" key={i}>
-              <Button className="tryIt" onClick={() => getBlogById(el._id)}>
+            <div key={u}>
+              <Button onClick={() => getBlogById(el._id)}>
                 <div className="blogStyle">
                   <img className="blogImage" src={el.image} alt="goy" />
                   <span>{el.title}</span>
@@ -53,4 +53,4 @@ const Brazil = () => {
     </div>
   );
 };
-export default Brazil;
+export default TheNetherLands;

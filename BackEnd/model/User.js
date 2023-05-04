@@ -38,6 +38,7 @@ export const UserSchema = new mongoose.Schema(
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
+
 UserSchema.virtual("Blog", {
   ref: "Blog",
   localField: "_id",
@@ -68,4 +69,5 @@ UserSchema.methods.jwtGenerate = async function () {
     expiresIn: "1d",
   });
 };
+
 export const User = mongoose.model("User", UserSchema);
