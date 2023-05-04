@@ -1,19 +1,27 @@
 .ProfileBigContainer {
-    background-color: black;
+    background-color: #0D1117;
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    gap: 3em;
+    z-index: -3px;
+}
+.lyro {
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 .ProfileTinyContainer {
     width: 75vw;
     height: 75vh;
-    background-color: rgb(0, 0, 0);
-    font-family: 'Roboto Condensed', sans-serif;
-    color: white;
+    background-color: #161c27;
     display: flex;
+    border-radius: 25px;
+    z-index: 1;
 }
 
 .PfP {
@@ -29,7 +37,7 @@
 .Blogs {
     display: grid;
     grid-template-columns: 300px 300px 300px; 
-    grid-template-rows: 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px 150px;
     gap: 6px;
     padding: 6px;
     margin-left: 150px;
@@ -45,15 +53,25 @@
     width: 300px;
     height: 150px;
     border-radius: 10px;
+    transition-duration: 0.4s;
 }
 
+/* .BlogImg:hover{
+    width: 310px;
+    height: 155px;
+} */
+.logoCon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
 .ProfileLogo {
-    width: 50px;
-    height: 50px;
-    position: absolute;
+    width: 60px;
+    height: 60px;
+    /* position: absolute;
     left: 25px;
-    top: 25px;
-    background-image: url("../../images/logo.png");
+    top: 25px;     */
 }
 
 .EditPro {
@@ -90,7 +108,22 @@
 }
 
 .ProfileHeader{
-    height: 150px;
+    padding: 2em 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100vw;
-    background-color: rgb(30, 30, 30);
+    height: 100px;
+    background-image: url("../../images/headerPic.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(145, 148, 150);
+    border-bottom-style: solid;
+}
+
+.mdkue{
+    margin-left: 50px;
+    margin-top: 50px;
 }
