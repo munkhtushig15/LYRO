@@ -1,0 +1,8 @@
+.blogCreateContainer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 2em;
+}

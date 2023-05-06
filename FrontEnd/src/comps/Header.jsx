@@ -217,7 +217,7 @@ const Header = () => {
               </Link>
               <Link to="/Create" className="profileMiniContainer">
                 <ProfileMini
-                  image={<i className="gg-eye iconsMiniPro"></i>}
+                  image={<i class="fa fa-plus iconsMiniPro"></i>}
                   title="Add Blog"
                 />
               </Link>
