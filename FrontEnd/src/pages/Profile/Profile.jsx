@@ -51,7 +51,8 @@ export default function Profile() {
     },
   ];
   const [name, setName] = useState();
-  const id = JSON.parse(localStorage.getItem("id"));
+  const id = JSON.parse(localStorage.getItem("user_id"));
+  console.log(id);
   const getUser = async () => {
     const res = await instance.get(`/users/${id}`);
     console.log(res);

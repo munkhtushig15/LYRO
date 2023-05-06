@@ -201,10 +201,12 @@ const Header = () => {
               </div>
             </div>
             <div className="threeGrid">
-              <ProfileMini
-                image={<i className="gg-notes iconsMiniPro"></i>}
-                title="Blogs"
-              />
+              <Link to="/myBlogs">
+                <ProfileMini
+                  image={<i className="gg-notes iconsMiniPro"></i>}
+                  title="Blogs"
+                />
+              </Link>
               <ProfileMini
                 image={<i className="gg-eye iconsMiniPro"></i>}
                 title="Views"

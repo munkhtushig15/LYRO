@@ -1,0 +1,12 @@
+.Container {
+  width: 100%;
+}
+.FavCont {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+}
+.favImg {
+  width: 80%;
+}
