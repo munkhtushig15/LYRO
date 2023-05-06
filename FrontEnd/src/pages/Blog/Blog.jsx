@@ -4,7 +4,9 @@ import { instance } from "../../App";
 import Header from "../../comps/Header";
 import Footer from "../../comps/Footer";
 import "./Blog.css";
+
 import { Button } from "@mui/material";
+
 const Blog = () => {
   const [blog, setBlog] = useState();
   const [data, setData] = useState();
