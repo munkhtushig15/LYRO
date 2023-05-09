@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { instance } from "../../App";
 import Header from "../Header";
 import "./16c.css";
-const Switzerland = () => {
+const Mongolia = () => {
   const [data, setData] = useState();
   const getData = async () => {
     const res = await instance.post("/blogs/Pcate", {
-      parentCategory: "Switzerland",
+      parentCategory: "Mongolia",
     });
 
     console.log(res);
@@ -40,4 +40,4 @@ const Switzerland = () => {
     </div>
   );
 };
-export default Switzerland;
+export default Mongolia;
