@@ -39,15 +39,13 @@ const Mongolia = () => {
       {data &&
         data.map((el, a) => {
           return (
-            <div key={a}>
-              <Button onClick={() => getBlogById(el._id)}>
-                <div className="blogStyle">
-                  <img className="blogImage" src={el.image} alt="goy" />
-                  <span>{el.title}</span>
-                  <span>{el.secondCategory}</span>
-                </div>
-              </Button>
-            </div>
+            <Button className="blogContainerMini" onClick={() => getBlogById(el._id)}>
+              <div className="blogStyle">
+                <img className="blogImage" src={el.image} alt="goy" />
+                <span>{el.title}</span>
+                <span>{el.secondCategory}</span>
+              </div>
+            </Button>
           );
         })}
     </div>
