@@ -39,15 +39,13 @@ const UnitedKingdom = () => {
       {data &&
         data.map((el, u) => {
           return (
-            <div key={u}>
-              <Button onClick={() => getBlogById(el._id)}>
-                <div className="blogStyle">
-                  <img className="blogImage" src={el.image} alt="goy" />
-                  <span>{el.title}</span>
-                  <span>{el.secondCategory}</span>
-                </div>
-              </Button>
-            </div>
+            <Button className="blogContainerMini" onClick={() => getBlogById(el._id)}>
+              <div className="blogStyle">
+                <img className="blogImage" src={el.image} alt="goy" />
+                <span>{el.title}</span>
+                <span>{el.secondCategory}</span>
+              </div>
+            </Button> 
           );
         })}
     </div>
