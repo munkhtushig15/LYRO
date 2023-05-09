@@ -44,7 +44,7 @@ const CreatePost = () => {
           id="outlined-basic2"
           label="Country"
         >
-          {SecondCategoryOptions.map((option) => (
+          {CountryOptions.map((option) => (
             <MenuItem key={option.country} value={option.country}>
               {option.title}
             </MenuItem>
@@ -57,15 +57,13 @@ const CreatePost = () => {
           id="outlined-basic2"
           label="Gol us gazar shoroo"
         >
-          {CountryOptions.map((option) => (
+          {SecondCategoryOptions.map((option) => (
             <MenuItem key={option.value} value={option.value}>
               {option.label}
             </MenuItem>
           ))}
         </TextField>
-        <Button onClick={Create} >
-          Create
-        </Button>
+        <Button onClick={Create}>Create</Button>
         <Link to="/Home">To Home</Link>
       </div>
       <Footer />

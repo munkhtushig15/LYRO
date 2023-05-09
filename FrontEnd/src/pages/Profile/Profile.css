@@ -1,123 +1,132 @@
 .ProfileBigContainer {
-    background-color: #0D1117;
-    width: 100vw;
-    padding: 5em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Roboto Condensed', sans-serif;
-    color: white;
-    gap: 3em;
-    border-bottom: 3px solid #ffffff55;
+  background-color: #0d1117;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto Condensed", sans-serif;
+  color: white;
+  gap: 3em;
+  z-index: -3px;
 }
 .lyro {
   font-family: "Roboto Condensed", sans-serif;
 }
 
 .ProfileTinyContainer {
-    width: 75vw;
-    background-color: #161c27;
-    display: flex;
-    border-radius: 25px;
-    padding: 1em;
+  width: 83vw;
+  height: 77vh;
+  background-color: #161c27;
+  display: flex;
+  border-radius: 25px;
+  z-index: 1;
 }
+
 .PfP {
-    border-radius: 50%;
-    width: 15em;
-    height: 15em;
+  border-radius: 50%;
+  width: 225px;
+  height: 225px;
 }
+
 .PfN {
-    font-size: 36px;
+  font-size: 36px;
 }
+
 .Blogs {
-    width: 70%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.089);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    /* padding: 2em; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 6px;
+  padding: 6px;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.089);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  /* padding: 2em; */
 }
+
 .BlogImg {
-    width: 100%;
-    height: 11em;
-    border-radius: 10px;
-    transition-duration: 0.4s;
+  width: 300px;
+  height: 150px;
+  border-radius: 10px;
+  transition-duration: 0.4s;
 }
+
+/* .BlogImg:hover{
+    width: 310px;
+    height: 155px;
+} */
 .logoCon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 25vh;
+  gap: 10px;
 }
 .ProfileLogo {
-    width: 60px;
-    height: 60px;
-    /* position: absolute;
+  width: 60px;
+  height: 60px;
+  /* position: absolute;
     left: 25px;
     top: 25px;     */
 }
+
 .EditPro {
-    width: 30px;
-    height: 30px;
-    background-color: grey;
-    border-radius: 25px;
-    border-width: 0;
-    margin-bottom: 5px;
-    color: white;
-    transition: width 0.4s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-    position: relative;
-    top: -2em;
-    left: 2em;
+  width: 30px;
+  height: 30px;
+  background-color: grey;
+  border-radius: 25px;
+  border-width: 0;
+  margin-bottom: 5px;
+  color: white;
+  transition: width 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
 }
 .textBefore {
-    display: none;
+  display: none;
 }
 .pencilIcon {
-    width: 18px;
+  width: 18px;
 }
 .EditPro:hover .pencilIcon {
-    display: none;
+  display: none;
 }
 .EditPro:hover .textBefore {
-    display: flex;
+  display: flex;
 }
 .EditPro:hover {
-    background-color: white;
-    color: black;
-    width: fit-content;
-    padding: 10px;
+  background-color: white;
+  color: black;
+  width: fit-content;
+  padding: 10px;
 }
-.ProfileHeader{
-    padding: 2em 0 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    height: 100px;
-    background-image: url("../../images/headerPic.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-bottom-width: 2px;
-    border-bottom-color: rgb(145, 148, 150);
-    border-bottom-style: solid;
+
+.ProfileHeader {
+  padding: 2em 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100px;
+  background-image: url("../../images/headerPic.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-bottom-width: 2px;
+  border-bottom-color: rgb(145, 148, 150);
+  border-bottom-style: solid;
 }
-.mdkue{
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3em;
+
+.mdkue {
+  margin-left: 50px;
+  margin-top: 50px;
 }

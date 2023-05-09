@@ -124,3 +124,18 @@ export const getBlogBySecondCate = async (req, res) => {
     });
   }
 };
+export const getBlogByUser = async (req, res) => {
+  try {
+    const Skip = req.query.skip;
+    const Limit = req.query.limit;
+    const { user_id } = req.body;
+    const blog = await Blog.find({ user_id: user_id }).limit(Limit).skip(Skip);
+    res.status(200).send({
+      data: blog,
+    });
+  } catch (error) {
+    res.status(400).send({
+      data: error.message,
+    });
+  }
+};
