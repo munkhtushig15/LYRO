@@ -3,7 +3,6 @@ import Header from "../../comps/Header";
 import Footer from "../../comps/Footer";
 import BigAds from "../../comps/BigAds";
 import CountryC from "../../comps/16 countries/ACountryC";
-import Comments from "../../comps/Comments";
 
 const Home = () => {
   return (
@@ -17,7 +16,6 @@ const Home = () => {
             <CountryC />
           </div>
         </div>
-        <Comments />
       </main>
       <Footer />
     </div>

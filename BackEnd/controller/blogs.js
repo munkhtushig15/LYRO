@@ -23,6 +23,7 @@ export const getBlogById = async (req, res) => {
   try {
     const { id } = req.params;
     const blog = await Blog.findById({ _id: id }).populate("Comment");
+
     res.status(200).send({
       data: blog,
     });
@@ -77,18 +78,7 @@ export const addFavorite = async (req, res) => {
     });
   }
 };
-export const addComment = async (req, res) => {
-  try {
-    const comment = await Comment.create(req.body);
-    res.status(200).send({
-      data: comment,
-    });
-  } catch (error) {
-    res.status(400).send({
-      data: error.message,
-    });
-  }
-};
+
 export const getBlogByParentCate = async (req, res) => {
   try {
     const { parentCategory } = req.body;

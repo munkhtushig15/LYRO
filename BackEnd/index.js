@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import userRouter from "./router/user.js";
 import blogRouter from "./router/blog.js";
+import commentRouter from "./router/comment.js";
 const app = express();
 
 dotenv.config();
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/users", userRouter);
 app.use("/blogs", blogRouter);
+app.use("/comments", commentRouter);
 const uri = process.env.MONGO_ATLAS_URI || "";
 const port = process.env.PORT || 9911;
 

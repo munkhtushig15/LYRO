@@ -38,7 +38,6 @@ export const UserSchema = new mongoose.Schema(
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
-
 UserSchema.virtual("Blog", {
   ref: "Blog",
   localField: "_id",

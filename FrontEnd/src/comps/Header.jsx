@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { instance } from "../App";
 import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
-
 import ProfileMini from "./ProfileMini";
 
 const Header = () => {
@@ -17,45 +16,19 @@ const Header = () => {
   };
 
   const [name, setName] = useState();
-  const [age, setAge] = useState();
-  const [role, setRole] = useState();
   const [isName, setIsName] = useState(false);
   const [user, setUser] = useState();
-  const [favorites, setFavorites] = useState([]);
   const id = JSON.parse(localStorage.getItem("user_id"));
   const getUser = async () => {
     const res = await instance.get(`/users/${id}`);
     setUser(res.data.data);
     setName(res.data.data.nickName);
-    setAge(res.data.data.age);
-    setRole(res.data.data.role);
     setIsName(true);
   };
 
   const logOut = () => {
     window.localStorage.removeItem("user_id");
     window.location.replace("/Home");
-  };
-
-  const getFavorites = async () => {
-    const res = await instance.get(`/users/${id}`);
-    console.log(res);
-    setFavorites(
-      res.data.data2.map((el) => {
-        return el;
-      })
-    );
-    // Promise.all(
-    //   res.data.data.Favorite.map(async (el) => {
-    //     const id = el.blog_id;
-    //     return await instance.get(`/blogs/${id}`);
-    //   })
-    // )
-    //   .then((data) => {
-    //     console.log(data.data.data);
-    //     setFavorites(data);
-    //   })
-    //   .catch((error) => console.error(error));
   };
 
   useEffect(() => {
@@ -79,7 +52,6 @@ const Header = () => {
                 <i className="gg-profile"></i>
 
                 {name}
-                {age}
               </div>
             </Button>
           ) : (
@@ -129,26 +101,43 @@ const Header = () => {
           </div>
         </div>
         <div className="cateContainer">
-          <div className="cateType">
-            <i className="gg-arrow-down-o"></i>
-            <span>Mountain</span>
-          </div>
-          <div className="cateType">
-            <i className="gg-arrow-down-o"></i>
-            <span>Breach</span>
-          </div>
-          <div className="cateType">
-            <i className="gg-arrow-down-o"></i>
-            <span>City</span>
-          </div>
-          <div className="cateType">
-            <i className="gg-arrow-down-o"></i>
-            <span>Forest</span>
-          </div>
-          <div className="cateType">
-            <i className="gg-arrow-down-o"></i>
-            <span>Land</span>
-          </div>
+          <Link
+            to="/Mountian"
+            style={{ color: "black", textDecoration: "none" }}
+          >
+            <div className="cateType">
+              <i className="gg-arrow-down-o"></i>
+              <span>Mountain</span>
+            </div>
+          </Link>
+          <Link to="/Beach" style={{ color: "black", textDecoration: "none" }}>
+            <div className="cateType">
+              <i className="gg-arrow-down-o"></i>
+              <span>Beach</span>
+            </div>
+          </Link>
+
+          <Link to="/City" style={{ color: "black", textDecoration: "none" }}>
+            {" "}
+            <div className="cateType">
+              <i className="gg-arrow-down-o"></i>
+              <span>City</span>
+            </div>
+          </Link>
+
+          <Link to="/Forest" style={{ color: "black", textDecoration: "none" }}>
+            <div className="cateType">
+              <i className="gg-arrow-down-o"></i>
+              <span>Forest</span>
+            </div>
+          </Link>
+
+          <Link to="/Land" style={{ color: "black", textDecoration: "none" }}>
+            <div className="cateType">
+              <i className="gg-arrow-down-o"></i>
+              <span>Land</span>
+            </div>
+          </Link>
         </div>
       </div>
       {!isClick ? (
@@ -209,7 +198,8 @@ const Header = () => {
               </div>
             </div>
             <div className="threeGrid">
-              <Link to="/Favorites" className="profileMiniContainer">
+//               <Link to="/Favorites" className="profileMiniContainer">
+              <Link to="/myBlogs">
                 <ProfileMini
                   image={<i className="gg-notes iconsMiniPro"></i>}
                   title="Blogs"

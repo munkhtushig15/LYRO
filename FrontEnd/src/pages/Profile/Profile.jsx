@@ -3,7 +3,6 @@ import "./Profile.css";
 import Footer from "../../comps/Footer";
 import { instance } from "../../App";
 import { Link } from "react-router-dom";
-
 export default function Profile() {
   const Img = [
     { img: "https://blog.joby.com/wp-content/uploads/2016/12/blog-header.jpg" },
@@ -51,7 +50,8 @@ export default function Profile() {
     },
   ];
   const [name, setName] = useState();
-  const id = JSON.parse(localStorage.getItem("id"));
+  const id = JSON.parse(localStorage.getItem("user_id"));
+  console.log(id);
   const getUser = async () => {
     const res = await instance.get(`/users/${id}`);
     console.log(res);
