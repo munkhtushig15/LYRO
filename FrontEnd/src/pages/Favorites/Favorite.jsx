@@ -18,29 +18,30 @@ const Favorite = () => {
     getData();
   }, []);
   return (
-    <div className="homeContainer">
+    <div className="containerOfFavs">
       <Header />
-      <main className="FavCont">
-        {data &&
-          data.map((el, favo) => {
-            return (
-              <div
-                className="Container"
-                style={{ display: "flex", flexDirection: "column" }}
-                key={favo}
-              >
-                <p>Category : {el.category}</p>
-                <p>ParentCategory : {el.parentCategory}</p>
-                <p>Gol us gazar shoroo : {el.secondCategory}</p>
-                <p> Niit od : {el.stars}</p>
-                <p> Review humuusiin too : {el.user}</p>
-                <p> Title : {el.title}</p>
-                <p>Description : {el.desc}</p>
-                <img className="favImg" src={el.image} alt="aa" />
-              </div>
-            );
-          })}
-      </main>
+      <div className="FavCont">
+        <span className="favs">Favourites</span>
+        <div className="favsContainer">
+          {data &&
+            data.map((el, favo) => {
+              return (
+                <div className="favContainer" key={favo}>
+                  <img className="favImage" src={el.image} alt="aa" />
+                  <div className="favInfos">
+                    <span> Category: {el.category}</span>
+                    <span> ParentCategory: {el.parentCategory}</span>
+                    <span> Category: {el.secondCategory}</span>
+                    <span> Rate: {el.stars}</span>
+                    <span> Views: {el.user}</span>
+                    <span> Title: {el.title}</span>
+                    <span> Description: {el.desc}</span>
+                  </div>
+                </div>
+              );
+            })}
+        </div>
+      </div>
       <Footer />
     </div>
   );

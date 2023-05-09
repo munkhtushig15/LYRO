@@ -7,7 +7,6 @@ import MyBlogs from "./pages/Blog/myBlogs";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 import CreatePost from "./pages/CreatePost/Create";
-import Search from "./pages/Search/Search";
 import Favorite from "./pages/Favorites/Favorite";
 import Blog from "./pages/Blog/Blog";
 import Mountian from "./pages/Blog/Mountian";
@@ -53,7 +52,6 @@ function App() {
           <Route path="/SignUp" element={<SignUp />} />
 
           <Route path="/Create" element={<CreatePost />} />
-          <Route path="/Search" element={<Search />} />
           <Route path="/myBlogs" element={<MyBlogs />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/Favorites" element={<Favorite />} />
