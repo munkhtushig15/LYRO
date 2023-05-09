@@ -11,6 +11,8 @@ const Blog = () => {
   const [comment, setComment] = useState();
   const [userData, setUserData] = useState();
   const [rate, setRate] = useState();
+  const [view, setView] = useState();
+  const [views, setViews] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
   const rateRef = useRef();
@@ -24,6 +26,7 @@ const Blog = () => {
     setUserData(res2.data.data);
     setData(res.data.data);
     setBlog(res.data.data);
+    setViews(res.data.data.user);
   };
   const Rate = async (id) => {
     const res = await instance.get(`/blogs/${id}`);
@@ -57,11 +60,16 @@ const Blog = () => {
       })
     );
   };
-  useEffect(() => {
-    getComment();
-    getData();
-    setIsLoading(false);
-  }, [data]);
+  useEffect(
+    () => {
+      getComment();
+      getData();
+      setView(views + 1);
+      setIsLoading(false);
+    },
+    [data],
+    [view]
+  );
 
   if (isLoading) {
     return <div>Unshij baina</div>;
@@ -99,7 +107,7 @@ const Blog = () => {
               <span className="spanud">{rate ? rate : 0}</span>
               <div>
                 <strong>Views: </strong>
-                <span className="spanud">{blog && blog.user}</span>
+                <span className="spanud">{view && view}</span>
               </div>
               <div>
                 <input ref={rateRef} />

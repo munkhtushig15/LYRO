@@ -3,6 +3,7 @@ import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
+import { CountryOptions, SecondCategoryOptions } from "../Data";
 import { ToastContainer, toast } from "react-toastify";
 import MenuItem from "@mui/material/MenuItem";
 import "react-toastify/dist/ReactToastify.css";
@@ -26,99 +27,7 @@ const CreatePost = () => {
     toast.success("Created");
     console.log(res);
   };
-  const secondCategoryOptions = [
-    { country: "Switzerland", title: "Switzerland" },
-    {
-      country: "Germany",
-      title: "Germany",
-    },
-    {
-      country: "Canada",
-      title: "Canada",
-    },
-    {
-      country: "UnitedStates",
-      title: "UnitedStates",
-    },
-    {
-      country: "Australia",
-      title: "Australia",
-    },
-    {
-      country: "Japan",
-      title: "Japan",
-    },
-    {
-      country: "UnitedKingdom",
-      title: "UnitedKingdom",
-    },
-    {
-      country: "France",
-      title: "France",
-    },
-    {
-      country: "Denmark",
-      title: "Denmark",
-    },
-    {
-      country: "NewZealand",
-      title: "NewZealand",
-    },
-    {
-      country: "TheNetherLands",
-      title: "TheNetherLands",
-    },
-    {
-      country: "Norway",
-      title: "Norway",
-    },
-    {
-      country: "Italy",
-      title: "Italy",
-    },
-    {
-      country: "Finland",
-      title: "Finland",
-    },
-    {
-      country: "Spain",
-      title: "Spain",
-    },
-    {
-      country: "China",
-      title: "China",
-    },
-    {
-      country: "Russia",
-      title: "Russia",
-    },
-    {
-      country: "Mongolia",
-      title: "Mongolia",
-    },
-  ];
-  const countryOptions = [
-    {
-      value: "Mountain",
-      label: "Mountain",
-    },
-    {
-      value: "City",
-      label: "City",
-    },
-    {
-      value: "Beach",
-      label: "Beach",
-    },
-    {
-      value: "Forest",
-      label: "Forest",
-    },
-    {
-      value: "Land",
-      label: "Land",
-    },
-  ];
+
   return (
     <div>
       <ToastContainer />
@@ -132,7 +41,7 @@ const CreatePost = () => {
         label="Country"
         variant="standard"
       >
-        {secondCategoryOptions.map((option) => (
+        {CountryOptions.map((option) => (
           <MenuItem key={option.country} value={option.country}>
             {option.title}
           </MenuItem>
@@ -146,7 +55,7 @@ const CreatePost = () => {
         label="Gol us gazar shoroo"
         variant="standard"
       >
-        {countryOptions.map((option) => (
+        {SecondCategoryOptions.map((option) => (
           <MenuItem key={option.value} value={option.value}>
             {option.label}
           </MenuItem>
