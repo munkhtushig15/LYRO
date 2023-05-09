@@ -4,6 +4,7 @@ import {
   getAllBlogs,
   createBlog,
   getBlogById,
+  getBlogByUser,
   addFavorite,
   addStars,
   getBlogByCategory,
@@ -13,7 +14,10 @@ import {
 
 const blogRouter = express.Router();
 
-blogRouter.get("/", getAllBlogs).get("/:id", getBlogById);
+blogRouter
+  .get("/", getAllBlogs)
+  .get("/:id", getBlogById)
+  .post("/", getBlogByUser);
 
 blogRouter.post("/Pcate", getBlogByParentCate);
 blogRouter.post("/Ccate", getBlogByCategory);
