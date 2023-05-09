@@ -166,30 +166,30 @@ const Header = () => {
             </div>
           </div>
           <div className="threeGrid">
-          <Link to="/Favorites" className="profileMiniContainer">
-                <ProfileMini
-                  image={<i className="gg-notes iconsMiniPro"></i>}
-                  title="Blogs"
-                />
-              </Link>
-              <Link to="/Create" className="profileMiniContainer">
-                <ProfileMini
-                  image={<i className="gg-eye iconsMiniPro"></i>}
-                  title="Views"
-                />
-              </Link>
-              <Link to="/Profile" className="profileMiniContainer">
-                <ProfileMini
-                  image={<i className="gg-profile iconsMiniPro"></i>}
-                  title="Profile"
-                />
-              </Link>
-              <Link to="/Favorites" className="profileMiniContainer">
-                <ProfileMini
-                  image={<i className="gg-heart iconsMiniPro"></i>}
-                  title="Favourite"
-                />
-              </Link>
+            <Link to="/Favorites" className="profileMiniContainer">
+              <ProfileMini
+                image={<i className="gg-notes iconsMiniPro"></i>}
+                title="Blogs"
+              />
+            </Link>
+            <Link to="/Create" className="profileMiniContainer">
+              <ProfileMini
+                image={<i className="gg-eye iconsMiniPro"></i>}
+                title="Views"
+              />
+            </Link>
+            <Link to="/Profile" className="profileMiniContainer">
+              <ProfileMini
+                image={<i className="gg-profile iconsMiniPro"></i>}
+                title="Profile"
+              />
+            </Link>
+            <Link to="/Favorites" className="profileMiniContainer">
+              <ProfileMini
+                image={<i className="gg-heart iconsMiniPro"></i>}
+                title="Favourite"
+              />
+            </Link>
           </div>
         </div>
       ) : (
