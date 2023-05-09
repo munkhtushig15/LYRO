@@ -62,6 +62,9 @@ const Blog = () => {
       })
     );
   };
+  const deleteBlog = async () => {
+    
+  }
   useEffect(
     () => {
       getComment();
@@ -85,7 +88,8 @@ const Blog = () => {
           <button className="viewPro">
             <i class="gg-profile"></i>
             <span>View Profile</span>
-          </button>
+          </button>{" "}
+          <Button>Delete</Button>
         </div>
         <div className="blogPageTwo">
           <h2>{data?.title}</h2>

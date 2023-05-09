@@ -7,6 +7,7 @@ import {
   getBlogByUser,
   addFavorite,
   addStars,
+  deleteBlog,
   getBlogByCategory,
   getBlogByParentCate,
   getBlogBySecondCate,
@@ -19,6 +20,7 @@ blogRouter
   .get("/:id", getBlogById)
   .post("/", getBlogByUser);
 
+blogRouter.delete("/deleteBlog", deleteBlog);
 blogRouter.post("/Pcate", getBlogByParentCate);
 blogRouter.post("/Ccate", getBlogByCategory);
 blogRouter.post("/Scate", getBlogBySecondCate);
