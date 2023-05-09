@@ -139,3 +139,23 @@ export const getBlogByUser = async (req, res) => {
     });
   }
 };
+export const deleteBlog = async (req, res) => {
+  try {
+    const { user_id, blog_id } = req.body;
+    const blog = await Blog.findById({ _id: blog_id });
+    console.log(blog.user_id);
+    if (blog.user_id === user_id) {
+      res.status(200).send({
+        data: blog,
+      });
+    } else {
+      res.status(400).send({
+        data: "Ishh cvsda",
+      });
+    }
+  } catch (error) {
+    res.status(400).send({
+      data: error.message,
+    });
+  }
+};
