@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
-import { instance } from "../../App";
-
-const Mongolia = () => {
+import { instance } from "../../App";   
+import Header from "../Header";
+import "./16c.css";
+const Italy = () => {
   const [data, setData] = useState();
   const getData = async () => {
     const res = await instance.post("/blogs/Pcate", {
-      parentCategory: "Mongolia",
+      parentCategory: "Italy",
     });
+
+    console.log(res);
     setData(
       res.data.data.map((el) => {
         return el;
@@ -18,13 +21,18 @@ const Mongolia = () => {
   }, []);
   return (
     <div>
-      <div>
+      <Header />
+      <div className="visitGrid">
         {data &&
           data.map((el) => {
             return (
-              <div>
+              <div style={{ width: "100%" }}>
                 <p>{el.parentCategory}</p>
-                <p>{el.title}</p>
+                <img
+                  src={el.image}
+                  alt=""
+                  style={{ height: "20vh", width: "10vw" }}
+                />
               </div>
             );
           })}
@@ -32,4 +40,4 @@ const Mongolia = () => {
     </div>
   );
 };
-export default Mongolia;
+export default Italy;

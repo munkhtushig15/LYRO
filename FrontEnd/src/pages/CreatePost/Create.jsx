@@ -63,9 +63,7 @@ const CreatePost = () => {
             </MenuItem>
           ))}
         </TextField>
-        <Button onClick={Create} >
-          Create
-        </Button>
+        <Button onClick={Create}>Create</Button>
         <Link to="/Home">To Home</Link>
       </div>
       <Footer />
