@@ -198,8 +198,7 @@ const Header = () => {
               </div>
             </div>
             <div className="threeGrid">
-//               <Link to="/Favorites" className="profileMiniContainer">
-              <Link to="/myBlogs">
+              <Link to="/Favorites" className="profileMiniContainer">
                 <ProfileMini
                   image={<i className="gg-notes iconsMiniPro"></i>}
                   title="Blogs"
