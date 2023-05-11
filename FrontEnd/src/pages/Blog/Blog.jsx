@@ -62,9 +62,7 @@ const Blog = () => {
       })
     );
   };
-  const deleteBlog = async () => {
-    
-  }
+  const deleteBlog = async () => {};
   useEffect(
     () => {
       getComment();
@@ -88,8 +86,15 @@ const Blog = () => {
           <button className="viewPro">
             <i class="gg-profile"></i>
             <span>View Profile</span>
-          </button>{" "}
-          <Button>Delete</Button>
+          </button>
+          <div className="contro">
+            <Button>
+              <i class="gg-trash"></i>
+            </Button>
+            <Button onClick={() => addFavorites(data._id)}>
+              <i class="gg-heart"></i>
+            </Button>
+          </div>
         </div>
         <div className="blogPageTwo">
           <h2>{data?.title}</h2>
@@ -124,12 +129,7 @@ const Blog = () => {
           <hr />
           <div className="contentBlog">
             <span>{blog && blog.desc}</span>
-            <div>
-              {" "}
-              <Button onClick={() => addFavorites(data._id)}>
-                Add to favorites
-              </Button>
-            </div>
+            <div></div>
           </div>
           <div className="blogComments">
             <h4>Comments</h4>
@@ -138,11 +138,16 @@ const Blog = () => {
             {comment &&
               comment.map((el) => {
                 return (
-                  <div>
-                    <div>
-                      <p>Username : {el.user_id.name}</p>
-                      <p>Comment : {el.Comment}</p>
+                  <div className="blogCommentContainerTiny">
+                    <div className="userCommentContainer">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png"
+                        alt="gold"
+                        className="userImageBlog"
+                      />
+                      <span>{el.user_id.name}</span>
                     </div>
+                    <span>{el.Comment}</span>
                   </div>
                 );
               })}
@@ -160,7 +165,7 @@ const Blog = () => {
               src="https://images.unsplash.com/photo-1592977731761-2d58aafef572?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80"
               alt=""
             />
-            <span className="copyRight">Â© 2023 Lyro.com, Inc</span>
+            <span className="copyRight">© 2023 Lyro.com, Inc</span>
           </div>
         </div>
         <div className="containerPro">

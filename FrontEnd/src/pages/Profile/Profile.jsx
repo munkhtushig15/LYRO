@@ -77,16 +77,14 @@ export default function Profile() {
           </div>
 
           {!isClicked ? (
-            <>
-              {" "}
-              <Button onClick={getClick}>View more</Button>
+            <div className="blogsContainerProfile">
               <div className="Blogs">
                 {dataShow &&
                   dataShow.map((el) => {
                     return (
                       <div>
                         <img
-                          style={{ width: "13vw", height: "23.5vh" }}
+                          className="imgagess"
                           src={el.image}
                           alt=""
                         />
@@ -94,24 +92,25 @@ export default function Profile() {
                     );
                   })}
               </div>
-            </>
+              <Button onClick={getClick}>View more</Button>
+            </div>
           ) : (
-            <div>
-              <Button onClick={getClick}>View less</Button>
+            <div className="blogsContainerProfile">
               <div className="Blogs">
                 {data &&
                   data.map((el) => {
                     return (
                       <div>
                         <img
-                          style={{ width: "15vw", height: "25vh" }}
+                          className="imgagess"
                           src={el.image}
                           alt=""
-                        />{" "}
+                        />
                       </div>
                     );
                   })}
               </div>
+              <Button onClick={getClick}>View less</Button>
             </div>
           )}
         </div>
