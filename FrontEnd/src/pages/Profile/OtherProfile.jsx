@@ -4,40 +4,7 @@ import Footer from "../../comps/Footer";
 import { instance } from "../../App";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-export default function Profile() {
-  const [name, setName] = useState();
-  const [data, setData] = useState();
-  const [dataShow, setDataShow] = useState();
-  const [isClicked, setIsClicked] = useState(false);
-  const id = JSON.parse(localStorage.getItem("user_id"));
-  const getUser = async () => {
-    const res = await instance.get(`/users/${id}`);
-    const res2 = await instance.post(`/blogs/?limit=12`, {
-      user_id: id,
-    });
-
-    setData(
-      res.data.data.Blog.map((el) => {
-        return el;
-      })
-    );
-    setDataShow(
-      res2.data.data.map((el) => {
-        return el;
-      })
-    );
-    setName(res.data.data.name);
-  };
-  const getClick = () => {
-    if (isClicked === false) {
-      setIsClicked(true);
-    } else {
-      setIsClicked(false);
-    }
-  };
-  useEffect(() => {
-    getUser();
-  }, []);
+export default function OtherProfile() {
   return (
     <>
       {" "}
@@ -70,50 +37,11 @@ export default function Profile() {
                 <span className="textBefore">Edit Profile</span>
               </button>
             </div>
-            <p className="PfN">{name}</p>
+
             <p>
               Followers: 69 <span>Following: 1124</span>
             </p>
           </div>
-
-          {!isClicked ? (
-            <>
-              {" "}
-              <Button onClick={getClick}>View more</Button>
-              <div className="Blogs">
-                {dataShow &&
-                  dataShow.map((el) => {
-                    return (
-                      <div>
-                        <img
-                          style={{ width: "13vw", height: "23.5vh" }}
-                          src={el.image}
-                          alt=""
-                        />
-                      </div>
-                    );
-                  })}
-              </div>
-            </>
-          ) : (
-            <div>
-              <Button onClick={getClick}>View less</Button>
-              <div className="Blogs">
-                {data &&
-                  data.map((el) => {
-                    return (
-                      <div>
-                        <img
-                          style={{ width: "15vw", height: "25vh" }}
-                          src={el.image}
-                          alt=""
-                        />{" "}
-                      </div>
-                    );
-                  })}
-              </div>
-            </div>
-          )}
         </div>
 
         <Footer />

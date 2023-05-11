@@ -12,7 +12,6 @@ const MyBlogs = () => {
       })
     );
   };
-  console.log(data);
   useEffect(() => {
     getData();
   }, []);

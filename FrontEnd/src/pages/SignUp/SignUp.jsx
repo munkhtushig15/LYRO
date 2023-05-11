@@ -27,7 +27,7 @@ const SignUp = () => {
         age: ageRef.current.value,
       });
       toast.success("Successfully signed up");
-      console.log(res);
+
     } catch (error) {
       toast.error("Failed");
     }
