@@ -11,6 +11,7 @@ import {
   getBlogByCategory,
   getBlogByParentCate,
   getBlogBySecondCate,
+  testDelete,
 } from "../controller/blogs.js";
 
 const blogRouter = express.Router();
@@ -20,7 +21,9 @@ blogRouter
   .get("/:id", getBlogById)
   .post("/", getBlogByUser);
 
-blogRouter.delete("/deleteBlog", deleteBlog);
+blogRouter.post("/deleteBlog", deleteBlog);
+blogRouter.post("/deleteBlog2", testDelete);
+
 blogRouter.post("/Pcate", getBlogByParentCate);
 blogRouter.post("/Ccate", getBlogByCategory);
 blogRouter.post("/Scate", getBlogBySecondCate);

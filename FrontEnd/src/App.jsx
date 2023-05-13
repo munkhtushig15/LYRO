@@ -27,12 +27,13 @@ import Denmark from "./comps/16 countries visit/Denmark";
 import NewZealand from "./comps/16 countries visit/NewZealand";
 import TheNetherLands from "./comps/16 countries visit/TheNetherLands";
 import Norway from "./comps/16 countries visit/Norway";
-import Italy from "./comps/16 countries visit/Italy"; 
+import Italy from "./comps/16 countries visit/Italy";
 import Finland from "./comps/16 countries visit/Finland";
 import Spain from "./comps/16 countries visit/Spain";
 import China from "./comps/16 countries visit/China";
 import Russia from "./comps/16 countries visit/Russia";
 import axios from "axios";
+import OtherProfile from "./pages/Profile/OtherProfile";
 export const instance = axios.create({
   baseURL: "http://localhost:9911/",
   headers: {
@@ -54,6 +55,7 @@ function App() {
           <Route path="/Create" element={<CreatePost />} />
           <Route path="/myBlogs" element={<MyBlogs />} />
           <Route path="/Profile" element={<Profile />} />
+          <Route path="/Profile/:id" element={<OtherProfile />} />
           <Route path="/Favorites" element={<Favorite />} />
 
           <Route path="/blogs/:id" element={<Blog />} />
