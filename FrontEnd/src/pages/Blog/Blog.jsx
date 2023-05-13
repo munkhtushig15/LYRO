@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { instance } from "../../App";
+import NoStar from "../../comps/Star/NoStar";
+import Star from "../../comps/Star/Star";
 import Header from "../../comps/Header";
 import Footer from "../../comps/Footer";
 import "./Blog.css";
@@ -89,10 +91,10 @@ const Blog = () => {
           </button>
           <div className="contro">
             <Button>
-              <i class="gg-trash"></i>
+              <i className="gg-trash"></i>
             </Button>
             <Button onClick={() => addFavorites(data._id)}>
-              <i class="gg-heart"></i>
+              <i className="gg-heart"></i>
             </Button>
           </div>
         </div>
@@ -115,7 +117,8 @@ const Blog = () => {
             </div>
             <div>
               <strong>Rate: </strong>
-              <span className="spanud">{rate ? rate : 0}</span>
+              
+              <span className="spanud">{rate ?  <Star count={rate}/> : <NoStar />}</span>
               <div>
                 <strong>Views: </strong>
                 <span className="spanud">{view && view}</span>
@@ -133,21 +136,39 @@ const Blog = () => {
           </div>
           <div className="blogComments">
             <h4>Comments</h4>
-            <input ref={commentRef} />
-            <Button onClick={() => addComment(data._id)}>Add Comment</Button>
+            <div className="blogCommm">
+              <img
+                src="https://images.unsplash.com/photo-1683860243214-b68a21a261b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80"
+                alt="gold"
+                className="userImageBlog"
+              />
+              <div className="nodemon">
+                <input
+                  className="blogCommentStyle"
+                  placeholder="Your words here..."
+                  ref={commentRef}
+                />
+                <span
+                  className="blogCommentAdd"
+                  onClick={() => addComment(data._id)}
+                >
+                  Reply
+                </span>
+              </div>
+            </div>
             {comment &&
               comment.map((el) => {
                 return (
                   <div className="blogCommentContainerTiny">
+                    <img
+                      src="https://images.unsplash.com/photo-1683860243214-b68a21a261b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80"
+                      alt="gold"
+                      className="userImageBlog"
+                    />
                     <div className="userCommentContainer">
-                      <img
-                        src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png"
-                        alt="gold"
-                        className="userImageBlog"
-                      />
-                      <span>{el.user_id.name}</span>
+                      <strong className="strong">{el.user_id.name}</strong>
+                      <span className="SPAN">{el.Comment}</span>
                     </div>
-                    <span>{el.Comment}</span>
                   </div>
                 );
               })}
