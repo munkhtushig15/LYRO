@@ -28,7 +28,7 @@ const CreatePost = () => {
       user_id: JSON.parse(localStorage.getItem("user_id")),
     });
     toast.success("Created");
-    console.log(res);
+
   };
 
   return (

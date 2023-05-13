@@ -12,7 +12,7 @@ const City = () => {
         return el;
       })
     );
-    console.log(res);
+
   };
   useEffect(() => {
     getData();

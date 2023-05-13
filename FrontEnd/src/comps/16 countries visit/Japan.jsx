@@ -9,7 +9,6 @@ const Japan = () => {
       parentCategory: "Japan",
     });
 
-    console.log(res);
     setData(
       res.data.data.map((el) => {
         return el;

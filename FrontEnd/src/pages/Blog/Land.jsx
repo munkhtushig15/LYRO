@@ -12,7 +12,7 @@ const Land = () => {
         return el;
       })
     );
-    console.log(res);
+
   };
   useEffect(() => {
     getData();

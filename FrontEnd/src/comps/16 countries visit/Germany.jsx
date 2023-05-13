@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { instance } from "../../App";   
+import { instance } from "../../App"; 
+import BigAds from "../../comps/BigAds";  
 import Header from "../Header";
 import "./16c.css";
 const Germany = () => {
@@ -9,7 +10,6 @@ const Germany = () => {
       parentCategory: "Germany",
     });
 
-    console.log(res);
     setData(
       res.data.data.map((el) => {
         return el;
@@ -21,17 +21,18 @@ const Germany = () => {
   }, []);
   return (
     <div>
-      <Header />
-      <div className="visitGrid">
+      <Header />      
+      <div className="visitContainer">
         {data &&
           data.map((el) => {
             return (
-              <div style={{ width: "100%" }}>
+              
+              <div className="VisitBlogs">
                 <p>{el.parentCategory}</p>
                 <img
                   src={el.image}
                   alt=""
-                  style={{ height: "20vh", width: "10vw" }}
+                  style={{ height: "20vh", width: "10vw", marginBottom: "10px", borderRadius: "5px" }}
                 />
               </div>
             );

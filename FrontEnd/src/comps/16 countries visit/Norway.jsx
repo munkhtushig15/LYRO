@@ -9,7 +9,6 @@ const Norway = () => {
       parentCategory: "Norway",
     });
 
-    console.log(res);
     setData(
       res.data.data.map((el) => {
         return el;

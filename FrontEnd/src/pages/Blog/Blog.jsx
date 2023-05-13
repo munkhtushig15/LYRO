@@ -71,7 +71,7 @@ const Blog = () => {
       user_id: userId,
       blog_id: id,
     });
-    console.log(res);
+
     toast.success("Deleted");
     setTimeout(() => {
       window.location.replace("/Home");

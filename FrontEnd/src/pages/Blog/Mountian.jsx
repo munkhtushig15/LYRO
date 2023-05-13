@@ -12,7 +12,6 @@ const Mountian = () => {
         return el;
       })
     );
-    console.log(res);
   };
   useEffect(() => {
     getData();

@@ -12,7 +12,7 @@ const Beach = () => {
         return el;
       })
     );
-    console.log(res);
+
   };
   useEffect(() => {
     getData();

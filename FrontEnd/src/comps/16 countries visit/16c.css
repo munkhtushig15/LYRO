@@ -1,6 +1,22 @@
-.visitGrid {
-    width: 80vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2em;
+.visitContainer {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  
   }
+
+.VisitBlogs {
+  width: 50vw;
+  color: white;
+  font-family: "Roboto Condensed", sans-serif;
+  background-image: url("../../images/headerPic.jpg");
+  border-radius: 25px;
+  margin: 15px;
+  padding-left: 50px;
+}
+
+.visitIdk{
+  width: 200px;
+  height: 600px;
+  background-color: black;
+}

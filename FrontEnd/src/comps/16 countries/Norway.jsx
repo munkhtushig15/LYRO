@@ -11,7 +11,7 @@ const Norway = () => {
       const res = await instance.post("/blogs/Pcate/?limit=4", {
         parentCategory: "Norway",
       });
-      console.log(res);
+
       setData(
         res.data.data.map((el) => {
           return el;
@@ -25,7 +25,7 @@ const Norway = () => {
   const getBlogById = async (id) => {
     try {
       const res = await instance.get(`/blogs/${id}`);
-      console.log(res);
+
       window.location.replace(`/blogs/${id}`);
     } catch (error) {
       console.log(error.message);

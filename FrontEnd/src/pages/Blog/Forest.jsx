@@ -12,7 +12,7 @@ const Forest = () => {
         return el;
       })
     );
-    console.log(res);
+
   };
   useEffect(() => {
     getData();
