@@ -12,6 +12,9 @@ export const UserSchema = new mongoose.Schema(
       required: [false, "NickName"],
       type: String,
     },
+    profile: {
+      type: String,
+    },
     email: {
       required: [true, "Email"],
       unique: [true, "Burtgeltei email baina"],
@@ -25,14 +28,8 @@ export const UserSchema = new mongoose.Schema(
       required: [true, "Age"],
       type: Number,
     },
-    role: {
-      enum: ["normal", "admin"],
-      required: [true, "Gender"],
-      type: String,
-    },
     gender: {
       enum: ["male", "female", "others"],
-      required: [true, "Gender"],
       type: String,
     },
   },

@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 import MenuItem from "@mui/material/MenuItem";
 import "react-toastify/dist/ReactToastify.css";
 
-const SignUp = () => {
+const SignUp = ({ src, onChange }) => {
   const nameRef = useRef();
   const nickNameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
   const ageRef = useRef();
-  const roleRef = useRef();
+  const profileRef = useRef();
   const genderRef = useRef();
   const SignUp = async () => {
     try {
@@ -22,8 +22,8 @@ const SignUp = () => {
         nickName: nickNameRef.current.value,
         password: passwordRef.current.value,
         email: emailRef.current.value,
-        role: roleRef.current.value,
         gender: genderRef.current.value,
+        profile: profileRef.current.value,
         age: ageRef.current.value,
       });
       toast.success("Successfully signed up");
@@ -34,16 +34,39 @@ const SignUp = () => {
   const toLogin = () => {
     window.location.replace("/Login");
   };
-  const adminOptions = [
+  const genderOptions = [
     {
-      value: "admin",
-      label: "Admin",
+      value: "male",
+      label: "Male",
     },
     {
-      value: "normal",
-      label: "Normal",
+      value: "female",
+      label: "Female",
     },
   ];
+  // class CardProfile extends React.Component {
+  //   state = {
+  //     file: "",
+  //     imagePreviewUrl:
+  //       "https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true",
+  //     name: "",
+  //     status: "",
+  //     active: "edit",
+  //   };
+
+  //   photoUpload = (e) => {
+  //     e.preventDefault();
+  //     const reader = new FileReader();
+  //     const file = e.target.files[0];
+  //     reader.onloadend = () => {
+  //       this.setState({
+  //         file: file,
+  //         imagePreviewUrl: reader.result,
+  //       });
+  //     };
+  //     reader.readAsDataURL(file);
+  //   };
+  // }
   return (
     <div className="signupContainer">
       <ToastContainer />
@@ -63,6 +86,11 @@ const SignUp = () => {
           </Link>
         </div>
         <center style={{ marginTop: "0" }}>
+          <input
+            placeholder="Profile image link here!"
+            className="input"
+            ref={profileRef}
+          ></input>
           <input placeholder="Name" className="input" ref={nameRef}></input>
           <input
             placeholder="NickName"
@@ -78,15 +106,14 @@ const SignUp = () => {
             ref={passwordRef}
           ></input>
           <input placeholder="Age" className="input" ref={ageRef}></input>
-          <input placeholder="Gender" className="input" ref={genderRef}></input>
           <TextField
             select
-            inputRef={roleRef}
+            inputRef={genderRef}
             id="outlined-basic2"
-            label="Role"
+            label="Gender"
             variant="standard"
           >
-            {adminOptions.map((option) => (
+            {genderOptions.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
               </MenuItem>

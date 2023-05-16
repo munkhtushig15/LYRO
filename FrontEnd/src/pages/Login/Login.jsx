@@ -15,8 +15,10 @@ const Login = () => {
         email: emailRef.current.value,
         password: passwordRef.current.value,
       });
-      window.location.replace("/Home");
       window.localStorage.setItem("user_id", JSON.stringify(res.data.data.id));
+      if (res) {
+        window.location.replace("/Home");
+      }
     } catch (error) {
       toast.error("Failed");
     }

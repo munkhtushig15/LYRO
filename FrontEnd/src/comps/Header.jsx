@@ -16,6 +16,7 @@ const Header = () => {
   };
 
   const [name, setName] = useState();
+  const [pf, setPf] = useState();
   const [isName, setIsName] = useState(false);
   const [user, setUser] = useState();
   const id = JSON.parse(localStorage.getItem("user_id"));
@@ -23,9 +24,10 @@ const Header = () => {
     const res = await instance.get(`/users/${id}`);
     setUser(res.data.data);
     setName(res.data.data.nickName);
+    setPf(res.data.data.profile);
     setIsName(true);
+    console.log(res);
   };
-
   const logOut = () => {
     window.localStorage.removeItem("user_id");
     window.location.replace("/Home");
@@ -40,20 +42,45 @@ const Header = () => {
       <div className="headerContainer">
         <div className="headerTop">
           {isName ? (
-            <Button
-              className="userName"
-              onClick={getClick}
-              style={{
-                color: "white",
-                fontFamily: "Roboto Condensed, sans-serif",
-              }}
-            >
-              <div className="arrows">
-                <i className="gg-profile"></i>
-
-                {name}
-              </div>
-            </Button>
+            <>
+              {pf ? (
+                <Button
+                  className="userName"
+                  onClick={getClick}
+                  style={{
+                    color: "white",
+                    fontFamily: "Roboto Condensed, sans-serif",
+                  }}
+                >
+                  <div className="arrows">
+                    <img
+                      src={pf}
+                      alt={require("../images/UserIcon.png")}
+                      style={{ width: "2.5vh", borderRadius: "2vh" }}
+                    />
+                    {name}
+                  </div>
+                </Button>
+              ) : (
+                <Button
+                  className="userName"
+                  onClick={getClick}
+                  style={{
+                    color: "white",
+                    fontFamily: "Roboto Condensed, sans-serif",
+                  }}
+                >
+                  <div className="arrows">
+                    <img
+                      src={require("../images/UserIcon.png")}
+                      alt=""
+                      style={{ width: "2.5vh", borderRadius: "2vh" }}
+                    />
+                    {name}
+                  </div>
+                </Button>
+              )}
+            </>
           ) : (
             <Link
               to="/Login"
@@ -92,7 +119,7 @@ const Header = () => {
             </div>
           </Link>
           <div className="searchLine">
-            <input  type="text" placeholder="Search ..." />
+            <input type="text" placeholder="Search ..." />
             <button className="searchButton">
               <i className="gg-search searchButton"></i>
             </button>
@@ -193,12 +220,21 @@ const Header = () => {
           <div className="top">
             <div className="rightHeader">
               <div className="rightProfile">
-                <img
-                  className="profileIMG"
-                  src={require("../images/UserIcon.png")}
-                  alt=""
-                />
-                <span className="texts">{user.nickName}</span>
+                {pf ? (
+                  <>
+                    <img className="profileIMG" src={pf} alt="" />
+                    <span className="texts">{user.nickName}</span>
+                  </>
+                ) : (
+                  <>
+                    <img
+                      className="profileIMG"
+                      alt=""
+                      src={require("../images/UserIcon.png")}
+                    />
+                    <span className="texts">{user.nickName}</span>
+                  </>
+                )}
               </div>
               <div className="xButton" onClick={getClick}>
                 <i className="gg-close-o"></i>
