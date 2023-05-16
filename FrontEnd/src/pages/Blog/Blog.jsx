@@ -1,8 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { instance } from "../../App";
-import NoStar from "../../comps/Star/NoStar";
 import Star from "../../comps/Star/Star";
+import NoStar from "../../comps/Star/NoStar";
 import Header from "../../comps/Header";
 import { Link } from "react-router-dom";
 import Footer from "../../comps/Footer";
