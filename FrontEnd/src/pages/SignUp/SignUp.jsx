@@ -27,7 +27,6 @@ const SignUp = () => {
         age: ageRef.current.value,
       });
       toast.success("Successfully signed up");
-
     } catch (error) {
       toast.error("Failed");
     }
@@ -68,7 +67,8 @@ const SignUp = () => {
           <input
             placeholder="NickName"
             className="input"
-            ref={nickNameRef} d
+            ref={nickNameRef}
+            d
           ></input>
           <input placeholder="Email" className="input" ref={emailRef}></input>
           <input

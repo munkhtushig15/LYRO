@@ -16,6 +16,7 @@ const Blog = () => {
   const [rate, setRate] = useState();
   const [view, setView] = useState();
   const [views, setViews] = useState();
+  const [secUser, setSecUser] = useState();
   const [userId, setUserId] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
@@ -26,14 +27,15 @@ const Blog = () => {
     setIsLoading(true);
     const res = await instance.get(`/blogs/${id}`);
     const res2 = await instance.get(`/users/${res.data.data.user_id}`);
+    const user = await instance.get(`/users/${user_id}`);
     setRate(Number(res.data.data.stars) / Number(res.data.data.user));
     setUserData(res2.data.data);
     setData(res.data.data);
     setBlog(res.data.data);
+    setSecUser(user.data.data.id);
     setUserId(res.data.data.user_id);
     setViews(res.data.data.user);
   };
-
   const Rate = async (id) => {
     const res = await instance.get(`/blogs/${id}`);
     await instance.post(`/blogs/review/${id}`, {
@@ -94,6 +96,18 @@ const Blog = () => {
       <div className="blogPage">
         <div className="blogPageOne">
           <img className="imageBlogPage" src={data?.image} alt="" />
+          {userId === secUser ? (
+            <Link to="/Profile" className="viewPro">
+              <i class="gg-profile"></i>
+              <span>View Profile</span>
+            </Link>
+          ) : (
+            <Link to={`/Profile/${userId}`} className="viewPro">
+              <i class="gg-profile"></i>
+              <span>View Profile</span>
+            </Link>
+          )}
+
           {userId === user_id ? (
             <Button onClick={DeleteBlog}>Delete</Button>
           ) : (

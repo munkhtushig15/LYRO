@@ -9,6 +9,7 @@ import SignUp from "./pages/SignUp/SignUp";
 import CreatePost from "./pages/CreatePost/Create";
 import Favorite from "./pages/Favorites/Favorite";
 import Blog from "./pages/Blog/Blog";
+import Food from "./pages/Blog/Food";
 import Mountian from "./pages/Blog/Mountian";
 import City from "./pages/Blog/City";
 import Forest from "./pages/Blog/Forest";
@@ -64,6 +65,7 @@ function App() {
           <Route path="/Beach" element={<Beach />} />
           <Route path="/Forest" element={<Forest />} />
           <Route path="/Land" element={<Land />} />
+          <Route path="/AboutFood" element={<Food />} />
           <Route path="/Home/Switzerland" element={<Switzerland />} />
           <Route path="/Home/Mongolia" element={<Mongolia />} />
           <Route path="/Home/Germany" element={<Germany />} />

@@ -109,6 +109,10 @@ export const SecondCategoryOptions = [
     value: "Land",
     label: "Land",
   },
+  {
+    value: "Food",
+    label: "AboutFood",
+  },
 ];
 export const CountryData = [
   {
