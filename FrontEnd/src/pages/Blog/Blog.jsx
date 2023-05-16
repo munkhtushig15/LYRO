@@ -28,13 +28,16 @@ const Blog = () => {
   const getData = async () => {
     setIsLoading(true);
     const res = await instance.get(`/blogs/${id}`);
-    const res2 = await instance.get(`/users/${res.data.data.user_id}`);
-    const user = await instance.get(`/users/${user_id}`);
+    if(user_id){
+      const res2 = await instance.get(`/users/${res.data.data.user_id}`);
+      const user = await instance.get(`/users/${user_id}`);      setSecUser(user.data.data.id);  setUserData(res2.data.data);
+    }
+
     setRate(Number(res.data.data.stars) / Number(res.data.data.user));
-    setUserData(res2.data.data);
+
     setData(res.data.data);
     setBlog(res.data.data);
-    setSecUser(user.data.data.id);
+
     setUserId(res.data.data.user_id);
     setViews(res.data.data.user);
   };

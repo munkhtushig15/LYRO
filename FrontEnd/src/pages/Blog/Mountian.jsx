@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import Header from "../../comps/Header";
 import { instance } from "../../App";
+import Footer from "../../comps/Footer";
+import "./Blog.css";
+
 const Mountian = () => {
   const [data, setData] = useState();
   const getData = async () => {
@@ -12,24 +15,32 @@ const Mountian = () => {
         return el;
       })
     );
-    console.log(res);
+    console.log(res.data.data);
   };
   useEffect(() => {
     getData();
   }, []);
   return (
-    <div>
+    <>
       <Header />
-      {data &&
-        data.map((el) => {
-          return (
-            <div>
-              {el.secondCategory}
-              {el.title}
-            </div>
-          );
-        })}
-    </div>
+      <div className="mountainContainer">
+        <div className="dispFlex">
+          {data &&
+            data.map((el, i) => {
+              return (
+                <div key={i} className="mountain">
+                  <img className="imageMountain" src={el.image} alt="gold" />
+                  <div className="information">
+                    <strong>{el.title}</strong>
+                    <span>{el.desc}</span>
+                    <span>{el.stars}</span>
+                  </div>
+                </div>
+              );
+            })}
+        </div>
+      </div>
+    </>
   );
 };
 export default Mountian;
