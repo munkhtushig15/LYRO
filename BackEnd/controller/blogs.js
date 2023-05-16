@@ -1,6 +1,6 @@
 import { Blog } from "../model/Blog.js";
 import { Favorite } from "../model/Blog.js";
-import { Comment } from "../model/Comment.js";
+import { User } from "../model/User.js";
 export const getAllBlogs = async (req, res) => {
   try {
     const Skip = req.query.skip;
@@ -142,17 +142,35 @@ export const getBlogByUser = async (req, res) => {
 export const deleteBlog = async (req, res) => {
   try {
     const { user_id, blog_id } = req.body;
+    const user = await User.findById({ _id: user_id });
     const blog = await Blog.findById({ _id: blog_id });
-    console.log(blog.user_id);
-    if (blog.user_id === user_id) {
+
+    if (blog.user_id === user.id) {
+      await Blog.findByIdAndRemove({ _id: blog_id });
       res.status(200).send({
         data: blog,
+        message: "Deleted",
       });
     } else {
       res.status(400).send({
         data: "Ishh cvsda",
       });
     }
+  } catch (error) {
+    res.status(400).send({
+      data: error.message,
+    });
+  }
+};
+export const testDelete = async (req, res) => {
+  try {
+    const { blog_id } = req.body;
+    console.log(req.body);
+    const blog = await Blog.findByIdAndRemove({ _id: blog_id });
+    res.status(200).send({
+      data: blog,
+      message: "Deleted",
+    });
   } catch (error) {
     res.status(400).send({
       data: error.message,

@@ -9,6 +9,7 @@ import SignUp from "./pages/SignUp/SignUp";
 import CreatePost from "./pages/CreatePost/Create";
 import Favorite from "./pages/Favorites/Favorite";
 import Blog from "./pages/Blog/Blog";
+import Food from "./pages/Blog/Food";
 import Mountian from "./pages/Blog/Mountian";
 import City from "./pages/Blog/City";
 import Forest from "./pages/Blog/Forest";
@@ -27,12 +28,13 @@ import Denmark from "./comps/16 countries visit/Denmark";
 import NewZealand from "./comps/16 countries visit/NewZealand";
 import TheNetherLands from "./comps/16 countries visit/TheNetherLands";
 import Norway from "./comps/16 countries visit/Norway";
-import Italy from "./comps/16 countries visit/Italy"; 
+import Italy from "./comps/16 countries visit/Italy";
 import Finland from "./comps/16 countries visit/Finland";
 import Spain from "./comps/16 countries visit/Spain";
 import China from "./comps/16 countries visit/China";
 import Russia from "./comps/16 countries visit/Russia";
 import axios from "axios";
+import OtherProfile from "./pages/Profile/OtherProfile";
 export const instance = axios.create({
   baseURL: "http://localhost:9911/",
   headers: {
@@ -54,6 +56,7 @@ function App() {
           <Route path="/Create" element={<CreatePost />} />
           <Route path="/myBlogs" element={<MyBlogs />} />
           <Route path="/Profile" element={<Profile />} />
+          <Route path="/Profile/:id" element={<OtherProfile />} />
           <Route path="/Favorites" element={<Favorite />} />
 
           <Route path="/blogs/:id" element={<Blog />} />
@@ -62,6 +65,7 @@ function App() {
           <Route path="/Beach" element={<Beach />} />
           <Route path="/Forest" element={<Forest />} />
           <Route path="/Land" element={<Land />} />
+          <Route path="/AboutFood" element={<Food />} />
           <Route path="/Home/Switzerland" element={<Switzerland />} />
           <Route path="/Home/Mongolia" element={<Mongolia />} />
           <Route path="/Home/Germany" element={<Germany />} />

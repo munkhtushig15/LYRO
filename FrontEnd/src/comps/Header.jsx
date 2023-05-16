@@ -136,6 +136,15 @@ const Header = () => {
               <span>Land</span>
             </div>
           </Link>
+          <Link
+            to="/AboutFood"
+            style={{ color: "black", textDecoration: "none" }}
+          >
+            <div className="cateType">
+              <i className="gg-arrow-down-o"></i>
+              <span>AboutFood</span>
+            </div>
+          </Link>
         </div>
       </div>
       {!isClick ? (

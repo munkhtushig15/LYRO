@@ -1,20 +1,22 @@
+import { useEffect, useState } from "react";
 import Header from "../../comps/Header";
 import { instance } from "../../App";
-import { useState, useEffect } from "react";
-const MyBlogs = () => {
-  const id = JSON.parse(localStorage.getItem("user_id"));
+const Food = () => {
   const [data, setData] = useState();
   const getData = async () => {
-    const res = await instance.get(`/users/${id}`);
+    const res = await instance.post("/blogs/Scate", {
+      secondCategory: "Food",
+    });
     setData(
-      res.data.data.Blog.map((el) => {
+      res.data.data.map((el) => {
         return el;
       })
     );
+    console.log(res);
   };
   useEffect(() => {
     getData();
-  }, []);
+  },[]);
   return (
     <div>
       <Header />
@@ -22,11 +24,12 @@ const MyBlogs = () => {
         data.map((el) => {
           return (
             <div>
-              <p>{el.title}</p>
+              {el.secondCategory}
+              {el.title}
             </div>
           );
         })}
     </div>
   );
 };
-export default MyBlogs;
+export default Food;
