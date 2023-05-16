@@ -37,9 +37,9 @@ main {
   gap: 2em;
 }
 .blogsBigContainer {
-  width: 80vw;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   border-image: url("../../images/headerPic.jpg") 50 round;
   gap: 1em;
 }
