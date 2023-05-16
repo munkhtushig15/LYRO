@@ -46,7 +46,7 @@ const CreatePost = () => {
           id="outlined-basic2"
           label="Country"
         >
-          {CountryOptions.map((option) => (
+          {SecondCategoryOptions.map((option) => (
             <MenuItem key={option.country} value={option.country}>
               {option.title}
             </MenuItem>
@@ -59,7 +59,7 @@ const CreatePost = () => {
           id="outlined-basic2"
           label="Gol us gazar shoroo"
         >
-          {SecondCategoryOptions.map((option) => (
+          {CountryOptions.map((option) => (
             <MenuItem key={option.value} value={option.value}>
               {option.label}
             </MenuItem>

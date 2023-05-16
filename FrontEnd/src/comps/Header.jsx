@@ -92,12 +92,10 @@ const Header = () => {
             </div>
           </Link>
           <div className="searchLine">
-            <Link to={"/Search"} className="searchLine">
-              <input type="text" placeholder="Search ..." />
-              <button className="searchButton">
-                <i className="gg-search searchButton"></i>
-              </button>
-            </Link>
+            <input  type="text" placeholder="Search ..." />
+            <button className="searchButton">
+              <i className="gg-search searchButton"></i>
+            </button>
           </div>
         </div>
         <div className="cateContainer">
