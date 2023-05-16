@@ -138,6 +138,15 @@ const Header = () => {
               <span>Land</span>
             </div>
           </Link>
+          <Link
+            to="/AboutFood"
+            style={{ color: "black", textDecoration: "none" }}
+          >
+            <div className="cateType">
+              <i className="gg-arrow-down-o"></i>
+              <span>AboutFood</span>
+            </div>
+          </Link>
         </div>
       </div>
       {!isClick ? (
@@ -198,7 +207,7 @@ const Header = () => {
               </div>
             </div>
             <div className="threeGrid">
-              <Link to="/Favorites" className="profileMiniContainer">
+              <Link to="/myBlogs" className="profileMiniContainer">
                 <ProfileMini
                   image={<i className="gg-notes iconsMiniPro"></i>}
                   title="Blogs"

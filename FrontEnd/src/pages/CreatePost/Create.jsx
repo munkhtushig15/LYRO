@@ -3,12 +3,13 @@ import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
-import { CountryOptions, SecondCategoryOptions } from "../Data";
+import { CountryOptions, SecondCategoryOptions } from "../Data.js";
 import { ToastContainer, toast } from "react-toastify";
 import MenuItem from "@mui/material/MenuItem";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "../../comps/Footer";
-import "./Create.css";
+import Header from "../../comps/Header";
+// import "./Create.css";
 
 const CreatePost = () => {
   const titleRef = useRef();
@@ -33,6 +34,7 @@ const CreatePost = () => {
 
   return (
     <>
+      <Header />
       <ToastContainer />
       <div className="blogCreateContainer">
         <TextField inputRef={titleRef} label="Title"></TextField>
