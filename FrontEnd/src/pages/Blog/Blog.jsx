@@ -20,6 +20,7 @@ const Blog = () => {
   const [views, setViews] = useState();
   const [secUser, setSecUser] = useState();
   const [userId, setUserId] = useState();
+  const [name, setName] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
   const rateRef = useRef();
@@ -28,13 +29,17 @@ const Blog = () => {
   const getData = async () => {
     setIsLoading(true);
     const res = await instance.get(`/blogs/${id}`);
-    const res2 = await instance.get(`/users/${res.data.data.user_id}`);
-    const user = await instance.get(`/users/${user_id}`);
+
+    if (user_id) {
+      const res2 = await instance.get(`/users/${res.data.data.user_id}`);
+      const user = await instance.get(`/users/${user_id}`);
+      setSecUser(user.data.data.id);
+      setUserData(res2.data.data);
+    }
+
     setRate(Number(res.data.data.stars) / Number(res.data.data.user));
-    setUserData(res2.data.data);
     setData(res.data.data);
     setBlog(res.data.data);
-    setSecUser(user.data.data.id);
     setUserId(res.data.data.user_id);
     setViews(res.data.data.user);
   };
@@ -61,21 +66,20 @@ const Blog = () => {
   };
 
   const getComment = async () => {
-    const comment = await instance.post("/comments/byId", {
+    const res = await instance.post("/comments/byId", {
       blog_id: id,
     });
     setComment(
-      comment.data.data.map((el) => {
+      res.data.data.map((el) => {
         return el;
       })
     );
   };
   const DeleteBlog = async () => {
-    const res = await instance.post(`/blogs/deleteBlog`, {
+    await instance.post(`/blogs/deleteBlog`, {
       user_id: userId,
       blog_id: id,
     });
-    console.log(res);
     toast.success("Deleted");
     setTimeout(() => {
       window.location.replace("/Home");
@@ -177,6 +181,12 @@ const Blog = () => {
             {comment &&
               comment.map((el) => {
                 return (
+
+                  <div>
+                    <div>
+                      <p>Username : {el.user_id.name}</p>
+                      <p>Comment : {el && el.Comment}</p>
+
                   <div className="blogCommentContainerTiny">
                     <img
                       src="https://images.unsplash.com/photo-1683860243214-b68a21a261b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80"
@@ -186,6 +196,7 @@ const Blog = () => {
                     <div className="userCommentContainer">
                       <strong className="strong">{el.user_id.name}</strong>
                       <span className="SPAN">{el.Comment}</span>
+
                     </div>
                   </div>
                 );
