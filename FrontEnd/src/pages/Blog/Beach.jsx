@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Header from "../../comps/Header";
 import { instance } from "../../App";
 import "./Blog.css";
+import Footer from "../../comps/Footer";
+
 const Beach = () => {
   const [data, setData] = useState();
   const getData = async () => {
@@ -30,14 +32,14 @@ const Beach = () => {
                   <img className="imageMountain" src={el.image} alt="gold" />
                   <div className="information">
                     <strong>{el.title}</strong>
-                    <span>{el.desc}</span>
-                    <span>{el.stars}</span>
+                    <p className="overflow">{el.desc}</p>
                   </div>
                 </div>
               );
             })}
         </div>
       </div>
+      <Footer />
     </>
   );
 };

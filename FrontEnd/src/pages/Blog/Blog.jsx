@@ -103,12 +103,12 @@ const Blog = () => {
           <img className="imageBlogPage" src={data?.image} alt="" />
           {userId === secUser ? (
             <Link to="/Profile" className="viewPro">
-              <i class="gg-profile"></i>
+              <i className="gg-profile"></i>
               <span>View Profile</span>
             </Link>
           ) : (
             <Link to={`/Profile/${userId}`} className="viewPro">
-              <i class="gg-profile"></i>
+              <i className="gg-profile"></i>
               <span>View Profile</span>
             </Link>
           )}
@@ -138,8 +138,10 @@ const Blog = () => {
             </div>
             <div>
               <strong>Rate: </strong>
-              
-              <span className="spanud">{rate ?  <Star count={rate}/> : <NoStar />}</span>
+
+              <span className="spanud">
+                {rate ? <Star count={rate} /> : <NoStar />}
+              </span>
               <div>
                 <strong>Views: </strong>
                 <span className="spanud">{view && view}</span>
@@ -177,16 +179,10 @@ const Blog = () => {
                 </span>
               </div>
             </div>
-            {/* {comment &&
-              comment.map((el) => {
+            {comment &&
+              comment.map((el, i) => {
                 return (
-
-                  <div>
-                    <div>
-                      <p>Username : {el.user_id.name}</p>
-                      <p>Comment : {el && el.Comment}</p>
-
-                  <div className="blogCommentContainerTiny">
+                  <div key={i} className="blogCommentContainerTiny">
                     <img
                       src="https://images.unsplash.com/photo-1683860243214-b68a21a261b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80"
                       alt="gold"
@@ -195,11 +191,10 @@ const Blog = () => {
                     <div className="userCommentContainer">
                       <strong className="strong">{el.user_id.name}</strong>
                       <span className="SPAN">{el.Comment}</span>
-
                     </div>
                   </div>
                 );
-              })} */}
+              })}
           </div>
         </div>
         <div className="blogPageThree">
