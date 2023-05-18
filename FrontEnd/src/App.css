@@ -15,6 +15,7 @@
   flex-direction: column;
   align-items: center;
   width: 100vw;
+  /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
   background-image: url("./images/headerPic.jpg");
   background-repeat: no-repeat;
   background-size: cover;
