@@ -93,7 +93,7 @@ const Blog = () => {
   }, [data]);
 
   if (isLoading) {
-    return <div>Unshij baina</div>;
+    return <div className="loading">Loading ...</div>;
   }
   return (
     <div className="center">
@@ -178,7 +178,7 @@ const Blog = () => {
                 </span>
               </div>
             </div>
-            {comment &&
+            {/* {comment &&
               comment.map((el) => {
                 return (
 
@@ -200,7 +200,7 @@ const Blog = () => {
                     </div>
                   </div>
                 );
-              })}
+              })} */}
           </div>
         </div>
         <div className="blogPageThree">

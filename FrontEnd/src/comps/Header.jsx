@@ -56,7 +56,7 @@ const Header = () => {
                     <img
                       src={pf}
                       alt={require("../images/UserIcon.png")}
-                      style={{ width: "2.5vh", borderRadius: "2vh" }}
+                      className="pfCSS"
                     />
                     {name}
                   </div>
@@ -74,7 +74,7 @@ const Header = () => {
                     <img
                       src={require("../images/UserIcon.png")}
                       alt=""
-                      style={{ width: "2.5vh", borderRadius: "2vh" }}
+                      className="pfCSS"
                     />
                     {name}
                   </div>

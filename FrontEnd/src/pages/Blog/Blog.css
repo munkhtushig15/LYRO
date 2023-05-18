@@ -3,7 +3,17 @@
   flex-direction: column;
   align-items: center;
 }
-
+.loading {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  color: #fff;
+  font-family: "Roboto Condensed", sans-serif;
+  letter-spacing: 5px;
+}
 .blogPage {
   padding: 3em 0;
   width: 75%;
