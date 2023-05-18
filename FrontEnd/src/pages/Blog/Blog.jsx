@@ -29,7 +29,6 @@ const Blog = () => {
   const getData = async () => {
     setIsLoading(true);
     const res = await instance.get(`/blogs/${id}`);
-
     if (user_id) {
       const res2 = await instance.get(`/users/${res.data.data.user_id}`);
       const user = await instance.get(`/users/${user_id}`);
