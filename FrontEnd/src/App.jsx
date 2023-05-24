@@ -36,7 +36,7 @@ import Russia from "./comps/16 countries visit/Russia";
 import axios from "axios";
 import OtherProfile from "./pages/Profile/OtherProfile";
 export const instance = axios.create({
-  baseURL: "http://localhost:9911/",
+  baseURL: "https://lyro-backend.vercel.app/",
   headers: {
     "Content-type": "application/json; charset=UTF-8",
   },
