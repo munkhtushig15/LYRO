@@ -14,7 +14,7 @@ app.use(cors());
 app.use("/users", userRouter);
 app.use("/blogs", blogRouter);
 app.use("/comments", commentRouter);
-const uri = process.env.MONGO_ATLAS_URI || "";
+const uri = process.env.MONGO_ATLAS_URI || "mongodb+srv://Brps12:boldoo20071228bataa@lyro.qvigqrf.mongodb.net/?retryWrites=true&w=majority";
 const port = process.env.PORT || 9911;
 
 const connect = () => {
