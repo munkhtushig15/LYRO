@@ -37,7 +37,7 @@ import axios from "axios";
 import OtherProfile from "./pages/Profile/OtherProfile";
 
 export const instance = axios.create({
-  baseURL: "https://lyro-be.vercel.app/",
+  // baseURL: "https://lyro-be.vercel.app/",
   baseURL: "http://localhost:9911/",
   headers: {
     "Content-type": "application/json; charset=UTF-8",
