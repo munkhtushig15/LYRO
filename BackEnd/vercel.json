@@ -1,13 +1,10 @@
 {
-    "functions": {
-      "api/main.rs": {
-        "runtime": "vercel-rust@3.1.2"
-      }
-    },
-    "rewrites": [
-      {
-        "source": "/api/(.*)",
-        "destination": "/api/main"
-      }
+    "version": 2,
+    "builds": [
+      { "src": "api/*.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+      { "src": "/api/(.*)", "dest": "api/$1" }
     ]
   }
+  
