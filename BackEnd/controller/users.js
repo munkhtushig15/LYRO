@@ -87,3 +87,15 @@ export const getUserById = async (req, res) => {
     });
   }
 };
+export const editUser = async (req,res) => {
+  try {
+    const { nickName  , profile , id} = req.body
+    const user = await User.findByIdAndUpdate({_id : id} , {
+      nickName : nickName
+    }, {
+      profile : profile
+    })
+  } catch (error) {
+    
+  }
+}
