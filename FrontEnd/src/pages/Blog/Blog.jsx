@@ -6,6 +6,8 @@ import NoStar from "../../comps/Star/NoStar";
 import Header from "../../comps/Header";
 import { Link } from "react-router-dom";
 import Footer from "../../comps/Footer";
+import {TextField} from "@mui/material";
+import MenuItem from "@mui/material/MenuItem";
 import "./Blog.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -38,7 +40,7 @@ const Blog = () => {
     }
 console.log(userData)
 setCate(res.data.data.secondCategory)
-const category = await instance.post("/blogs/Scate" , {
+const category = await instance.post("/blogs/Scate/?limit=6" , {
   secondCategory : cate
 })
 console.log(category)
@@ -97,7 +99,27 @@ setSuggest(category.data.data)
     setView(views + 1);
     setIsLoading(false);
   }, [data]);
-
+ const rateOptions = [
+  {
+    value: "1",
+    label: "1",
+  },
+  {
+    value: "2",
+    label: "2",
+  }, {
+    value: "3",
+    label: "3",
+  },
+  {
+    value: "4",
+    label: "4",
+  },
+  {
+    value : "5",
+    label : "5"
+  }
+ ]
   if (isLoading) {
     return <div className="loading">Loading ...</div>;
   }
@@ -121,7 +143,7 @@ setSuggest(category.data.data)
           )}
 
           {userId === user_id ? (
-            <Button onClick={DeleteBlog}>Delete</Button>
+            <Button onClick={DeleteBlog}>🗑️</Button>
           ) : (
             <div></div>
           )}
@@ -152,10 +174,23 @@ setSuggest(category.data.data)
                 <span className="spanud">{view && view}</span>
               </div>
               <div>
-                <input ref={rateRef} />
+              <TextField
+            select
+            inputRef={rateRef}
+            id="outlined-basic2"
+            label="Rate"
+            variant="standard"
+            style={{width : "100px"}}
+          >
+            {rateOptions.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.value}
+              </MenuItem>
+            ))}
+          </TextField>
                 <Button onClick={() => Rate(data._id)}>Rate</Button>
               </div>
-              <Button onClick={() => addFavorites(data._id)}>Yes</Button>
+              <Button onClick={() => addFavorites(data._id)}>Add to favorites</Button>
             </div>
             
           </div>
@@ -222,15 +257,37 @@ setSuggest(category.data.data)
         <div className="containerPro">
           <div className="suggest">
             <p>Suggested</p>
+            <div style={{display : "flex" , flexDirection : "row"}}>
             {suggest && suggest.map((el) => {
-              return el.title
-            })}
+    
+              return (
+                <>
+                <div style={{textAlign : "center"}}>
+          
+                  <p style={{fontSize : "20px" ,  marginLeft : "" , width : "15vw"}}>{el.title}</p>
+                 
+                  <img alt="" src={el.image} style={{width : "5vw" , height : "20vh" , marginLeft : "1vw" , textAlign : "center"}}/>
+                </div>
+
+                </>
+              )
+            })}</div>
           </div>
           <div className="ownBlogs">
             <p>{userData && userData.nickName} Blogs</p>
+            <div style={{display : "flex" , flexDirection : "row"}}>
             {userData && userData.Blog.map((el) => {
-              return el.title
+              return ( <>
+                <div style={{textAlign : "center"}}>
+          
+                  <p style={{fontSize : "20px" ,  marginLeft : "" , width : "15vw"}}>{el.title}</p>
+                 
+                  <img alt="" src={el.image} style={{width : "5vw" , height : "20vh" , marginLeft : "" , textAlign : "center"}}/>
+                </div>
+
+                </>)
             })}
+            </div>
           </div>
         
         </div>

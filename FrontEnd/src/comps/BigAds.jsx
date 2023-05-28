@@ -14,8 +14,8 @@ const BigAds = () => {
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item className="adsCOntainer glassEffect">
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>Yes</h3>
+          
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item className="adsCOntainerTwo glassEffect">

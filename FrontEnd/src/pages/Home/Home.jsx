@@ -9,7 +9,7 @@ const Home = () => {
     <div className="homeContainer">
       <Header />
       <main>
-        <BigAds />
+     
         <div className="contents">
           <p className="title">LATEST ISSUE</p>
           <div className="gridBigBlog">
