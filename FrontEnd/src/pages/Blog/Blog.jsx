@@ -20,7 +20,8 @@ const Blog = () => {
   const [views, setViews] = useState();
   const [secUser, setSecUser] = useState();
   const [userId, setUserId] = useState();
-  const [name, setName] = useState();
+  const [cate, setCate] = useState();
+  const [suggest , setSuggest] = useState()
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
   const rateRef = useRef();
@@ -35,7 +36,13 @@ const Blog = () => {
       setSecUser(user.data.data.id);
       setUserData(res2.data.data);
     }
-
+console.log(userData)
+setCate(res.data.data.secondCategory)
+const category = await instance.post("/blogs/Scate" , {
+  secondCategory : cate
+})
+console.log(category)
+setSuggest(category.data.data)
     setRate(Number(res.data.data.stars) / Number(res.data.data.user));
     setData(res.data.data);
     setBlog(res.data.data);
@@ -137,11 +144,9 @@ const Blog = () => {
               <span className="spanudCate">{blog && blog.parentCategory}</span>
             </div>
             <div>
-              <strong>Rate: </strong>
+              <strong>Rate:{rate} </strong>
 
-              <span className="spanud">
-                {rate ? <Star count={rate} /> : <NoStar />}
-              </span>
+              
               <div>
                 <strong>Views: </strong>
                 <span className="spanud">{view && view}</span>
@@ -150,7 +155,9 @@ const Blog = () => {
                 <input ref={rateRef} />
                 <Button onClick={() => Rate(data._id)}>Rate</Button>
               </div>
+              <Button onClick={() => addFavorites(data._id)}>Yes</Button>
             </div>
+            
           </div>
           <hr />
           <div className="contentBlog">
@@ -215,13 +222,17 @@ const Blog = () => {
         <div className="containerPro">
           <div className="suggest">
             <p>Suggested</p>
+            {suggest && suggest.map((el) => {
+              return el.title
+            })}
           </div>
           <div className="ownBlogs">
             <p>{userData && userData.nickName} Blogs</p>
+            {userData && userData.Blog.map((el) => {
+              return el.title
+            })}
           </div>
-          <div className="history">
-            <p>History</p>
-          </div>
+        
         </div>
       </div>
       <Footer />

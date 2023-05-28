@@ -3,7 +3,7 @@ import Header from "../../comps/Header";
 import { instance } from "../../App";
 import "./Blog.css";
 import Footer from "../../comps/Footer";
-
+import { Link } from "react-router-dom";
 const Forest = () => {
   const [data, setData] = useState();
   const getData = async () => {
@@ -28,13 +28,14 @@ const Forest = () => {
           {data &&
             data.map((el, i) => {
               return (
+                <Link to={`/blogs/${el._id}`} style={{textDecoration : "none"}}>
                 <div key={i} className="mountain">
                   <img className="imageMountain" src={el.image} alt="gold" />
                   <div className="information">
                     <strong>{el.title}</strong>
                     <p>{el.desc}</p>
                   </div>
-                </div>
+                </div></Link>
               );
             })}
         </div>
